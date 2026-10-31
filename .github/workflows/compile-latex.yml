@@ -15,8 +15,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: |
-            apuntes1.tex
-            apuntes2.tex
+            main.tex
           # Reemplaza 'apuntes1.tex' y 'apuntes2.tex' por el nombre o ruta de tus archivos principales.
           # Si están en carpetas, usa por ejemplo: carpeta/documento.tex
 
