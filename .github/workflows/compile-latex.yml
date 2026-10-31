@@ -1,0 +1,29 @@
+name: Compilar LaTeX a PDF
+
+on:
+  push:
+    branches: [ "main" ] # O "master", dependiendo de cómo se llame tu rama principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copiar repositorio en el servidor
+        uses: actions/checkout@v4
+
+      - name: Compilar documentos LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            apuntes1.tex
+            apuntes2.tex
+          # Reemplaza 'apuntes1.tex' y 'apuntes2.tex' por el nombre o ruta de tus archivos principales.
+          # Si están en carpetas, usa por ejemplo: carpeta/documento.tex
+
+      - name: Subir PDFs generados como artefactos
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-compilados
+          path: |
+            *.pdf
+            # Ajusta la ruta si tus PDFs se guardan en subdirectorios
