@@ -1,0 +1,116 @@
+
+\ProvidesPackage{customthm} %creamos un paquete "customthm"
+
+\usepackage{amsthm} %redefine los ambientes \newtheorem
+
+
+% \renewcommand\qedsymbol{$\blacksquare$} %cambiar simbolo QED
+
+%% Teoremas con nota en negrita
+\newtheoremstyle{plain}% name
+    {}{}% Space above/below
+    {}{}% Body font/Indent amount
+    {\bfseries}{.}% Theorem head font/Punctuation
+    { }% Space after theorem head
+    {\thmname{#1}\thmnumber{ #2}\thmnote{ {\bfseries(#3)}}} % Theorem head spec (can be left empty, meaning ‘normal’) options:\thmname, \thmnumber,\thmnote
+
+\theoremstyle{plain}
+% NO enumerados
+    \newtheorem*{teo}{Teorema}
+    \newtheorem*{cor}{Corolario}
+    \newtheorem*{cors}{Corolarios}
+    \newtheorem*{prop}{Proposición}
+    \newtheorem*{lem}{Lema}    
+    \newtheorem{lema}{Lema}
+    \newtheorem*{cri}{Criterio}
+% Enumearados
+    % \newtheorem{thm}{Teorema}[chapter] % reset theorem numbering for each chapter
+    % \newtheorem{corol}[thm]{Corolario}
+    % \newtheorem{prop}[thm]{Proposición}
+    % \newtheorem{lema}[thm]{Lema}
+    % \newtheorem{crit}[thm]{Criterio}
+
+\theoremstyle{definition}
+% NO enumerados
+    \newtheorem*{defi}{{\fontfamily{cmr}\textsc{\textbf{Definición}}}} % definition numbers are dependent on theorem numbers
+    \newenvironment{defin}[1][]%
+        {%
+            \begin{defi}%
+            % \vspace{-5ex}\noindent 
+            \hfill\begin{minipage}[t]{\linewidth-5em}#1
+        }%
+        {%
+            \end{minipage}\end{defi}
+        }%
+    \newtheorem*{ejem}{\textit{Ejemplo}}
+        \newtheorem*{ejems}{\textit{Ejemplos}}
+    \newtheorem*{ejer}{\textit{Ejercicio}}
+        \newtheorem*{ejers}{\textit{Ejercicios}}
+    \newtheorem*{prob}{Problema}
+    \newtheorem*{algo}{Algoritmo}
+    \newtheorem*{axi}{Axioma}
+    \newtheorem*{propi}{Propiedad}
+        \newtheorem*{propis}{Propiedades}
+    \newtheorem*{clas}{Clasificación}
+% Enumerados
+    % \newtheorem{defn}[thm]{{\fontfamily{cmr}\textsc{\textbf{Def}}}} % definition numbers are dependent on theorem numbers
+    % \newenvironment{defin}[1][]%
+    %     {%
+    %         \begin{defn}%
+    %         % \vspace{-5ex}\noindent 
+    %         \hfill\begin{minipage}[t]{\linewidth-5em}#1
+    %     }%
+    %     {%
+    %         \end{minipage}\end{defn}
+    %     }%
+    % \newtheorem{ejem}[thm]{\textit{Ejemplo}}
+    %     \newtheorem*{ejems}{\textit{Ejemplos}}
+    % \newtheorem{exer}[thm]{\textit{Ejercicio}}
+    %     \newtheorem*{exers}{\textit{Ejercicios}}
+    % \newtheorem{prob}[thm]{Problema}
+    % \newtheorem{alg}[thm]{Algoritmo}
+    % \newtheorem{axm}[thm]{Axioma}
+    % \newtheorem{propd}[thm]{Propiedad}
+    %     \newtheorem*{propds}{Propiedades}
+    % \newtheorem{clasi}[thm]{Clasificación}
+
+\theoremstyle{remark}
+% NO enumerados
+    \newtheorem*{obs}{Observación}
+    %\newtheorem*{sol}{Solución}
+    \newtheorem*{nota}{Nota}
+    \newtheorem*{notc}{Notación}
+% Enumerados
+    % \newtheorem{obs}[thm]{Observación}
+    % \newtheorem{sol}[thm]{Solución}
+    % \newtheorem{nota}[thm]{Nota}
+    % \newtheorem*{notc}{Notación}
+
+
+\newtheoremstyle{customizable}% name
+{}{}% Space above/below
+{}{}% Body font/Indent amount
+{\bfseries}{.}% Theorem head font/Punctuation
+{ }% Space after theorem head
+{\thmnote{#3}} % Theorem head spec (can be left empty, meaning ‘normal’) options:\thmname, \thmnumber,\thmnote
+
+\theoremstyle{customizable}
+    \newtheorem*{custom}{}
+
+
+\newtheoremstyle{demo}
+  {3pt}% space before
+  {3pt}% space after
+  {\addtolength{\@totalleftmargin}{1em}
+   \addtolength{\linewidth}{-1em}
+   \parshape 1 1em \linewidth}% body font
+  {}% indent
+  {\bfseries}% header font
+  {.}% punctuation
+  {.5em}% after theorem header
+  {}% header specification (empty for default)
+\makeatother
+
+\theoremstyle{demo}
+\newtheorem*{dem}{Demostración}
+\newtheorem*{sol}{Solución}

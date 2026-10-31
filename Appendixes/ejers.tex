@@ -1,0 +1,963 @@
+\chapter{Ejercicios} \justifying
+\section{Seminario 1}
+\begin{ejer}
+    [1]
+\end{ejer}
+\begin{ejer}
+    [2] $X$ un conjunto, $A,B \subseteq X$ tal que $A,B \neq \emptyset$. Determinar si $\tau_1 = \{\emptyset, X, A\}$ y $\tau_2 = \{\emptyset, X, A, B\}$ son topolog\'ias. 
+\end{ejer}
+\begin{sol}\, 
+   \begin{enumerate}[a)]
+    \item $\tau_1$ s\'i es:
+    \begin{itemize}
+        \item $X, \emptyset \in \tau_1$
+        \item $\emptyset\cap X = \emptyset \in \tau_1 \quad A\cap X = A \in \tau_1 \quad A \cap \emptyset \in \tau_1$
+        \item  $\emptyset\cup X =X \in \tau_1\quad A \cup \emptyset = A \in \tau_1 \quad A\cup X = X \in \tau_1 $
+    \end{itemize}
+    \item $\tau_2$ no es: $A\cap B \nin \tau_2$
+   \end{enumerate} 
+   $\tau_2$ ser\'ia topolog\'ia $\iff A\sqcup B = X \iff A\subseteq B \iff B\subseteq A \iff B = X-A$.
+\end{sol}
+\begin{ejer}
+    [3] Demuestra que $\tau = \{0,\bb N\} \cup \{A \subseteq \bb N | A \text{ contenga tan sólo números pares}\}$ determina una topología de $\bb N$. Determina si los siguientes subconjuntos son abiertos, cerrados, las dos cosas o ninguna de las dos:
+    $$ A_1 = \{90,210,521 -1\}\qquad  A_2 = \{\text{números primos}\} \qquad  A_3 = \{\text{números impares}\}$$
+\end{ejer}
+\begin{sol}
+    \begin{enumerate}[a)] \item
+        \begin{itemize}
+        \item $\emptyset , \bb N \in \tau$
+        \item $A_1, \ldots, A_n \in \tau \Rightarrow A_1\cap \cdots \cap A_n \overset{?}{\in} \tau$. Como $A_1, \ldots, A_n$ s\'olo contienen pares, si $a\in A_1\cap \cdots \cap A_n \Rightarrow a \in A_1, \ldots, A_n \Rightarrow a$ es par $\Rightarrow A_1 \cap \cdots \cap A_n \in \tau (\text{\'o } \emptyset)$.
+        \item Si $\{A_i\} \in \tau \Rightarrow \bigcap_{i \in I} A_i \overset{?}{\in} \tau$. $A_i$ s\'olo tiene pares, si $m \in \bigcup_i A_i \Rightarrow \exists \, i_o \in I \, / \, m \in A_{i_o} \Rightarrow m $ es par. 
+        \end{itemize}
+        \item Tambi\'en es topolog\'ia por cerrados
+        $$\mc C_{\tau} = \{\emptyset, \bb N\} \cup \{B \subseteq \bb N \, | \, B \text{ contiene a todos los n\'umeros impares (y posiblemente pares)}\}$$
+        \item $A_1 = \{90,210,521 -1\}\in \tau $ pues son todos pares. No es cerrado pues no contiene a todos los impares.
+        \item $A_2 = \{\text{números primos}\}$ no es abierto (no contiene solo pares) ni es cerrado (no contiene a todos los impares).
+        \item $A_3 = \{\text{números impares}\}$ no es abierto `` \quad '' y s\'i es cerrado (contiene todos los impares).
+        \item No existen abiertos-cerrados (i.e. $\tau \cap \mc C_{\tau} =\emptyset$). S\'i existen no abiertos-no cerrados, por ejemplo $\{1\}$.
+        \item $A_1^{\circ} = A_1 \quad \overline{A_1} = A_1 \cup \{\text{n\'umeros impares}\} = A_1 \cup A_3$ \\
+        $A_2^{\circ} = \{\text{pares}\} \cup \{\text{primos}\} = \{2\} \quad \overline{A_2} = A_2 \cup \{\text{impares}\} = A_2 \cup A_3 = A_3 \cup \{2\}$\\ 
+        $A_3 ^{\circ}= \emptyset \quad \overline{A_3} = A_3$
+    \end{enumerate}
+\end{sol}
+\begin{ejer}
+    [6] \textbf{Topología del punto incluido.} Sea $X$ un conjunto y $a \in X$ un punto. Estudia si la familia de subconjuntos $\tau_a$ formada por el vacío y los subconjuntos $U \subset X$ tales que $a \in U$ define una topología por abiertos de $X$.
+\end{ejer}
+\begin{ejer}
+    [9] Sea $\tau$ la familia de subconjuntos de $\bb R$ consistente en $\bb R, \emptyset$ y los intervalos abiertos no acotados $A_q = (q, +\infty)$ donde $q\in \bb Q$. Demuestra que $\tau$ no es una tonología por abiertos de $\bb R$. 
+\end{ejer}
+\section{Seminario 2}
+\begin{ejer}
+    [23.a] Determina si las siguientes familias son base de abiertos:
+    $$B = \{A_{2n+1} = \{2n +1\}\}_{n\in \bb Z} \cup \{A_{2n} = \{2n - 1, 2n, 2n +1\}\}_{n\in \bb Z}$$
+\end{ejer}
+\begin{sol}
+    Para que $\mathcal{B}$ sea base de una topología sobre $\mathbb{Z}$, debe verificar las dos condiciones del teorema de caracterización de bases de abiertos:
+    
+    \begin{enumerate}
+        \item[1.] \textbf{Recubrimiento de $\mathbb{Z}$:} $\displaystyle \bigcup_{B \in \mathcal{B}} B = \mathbb{Z}$.
+        \item[2.] \textbf{Intersección de elementos básicos:} Para cualesquiera $B_1, B_2 \in \mathcal{B}$ y para todo $x \in B_1 \cap B_2$, existe $B_3 \in \mathcal{B}$ tal que $x \in B_3 \subseteq B_1 \cap B_2$.
+    \end{enumerate}
+
+    \textbf{1. Verificación del recubrimiento:}
+    
+    Todo número entero $k \in \mathbb{Z}$ es par o impar:
+    \begin{itemize}
+        \item Si $k$ es impar, existe $n \in \mathbb{Z}$ tal que $k = 2n+1$, por lo que $k \in A_{2n+1} = \{2n+1\} \in \mathcal{B}$.
+        \item Si $k$ es par, existe $n \in \mathbb{Z}$ tal que $k = 2n$, por lo que $k \in A_{2n} = \{2n-1, 2n, 2n+1\} \in \mathcal{B}$.
+    \end{itemize}
+    Por tanto, $\mathcal{B}$ cubre totalmente a $\mathbb{Z}$.
+
+    \medskip
+
+    \textbf{2. Verificación de la intersección de básicos:}
+
+    Analizamos la intersección de dos elementos cualesquiera $B_1, B_2 \in \mathcal{B}$:
+
+    \begin{itemize}
+        \item \textbf{Caso 1 ($B_1, B_2$ asociados a índices impares):} $A_{2n+1} \cap A_{2m+1}$
+        \[
+            A_{2n+1} \cap A_{2m+1} = \begin{cases}
+                A_{2n+1} \in \mathcal{B} & \text{si } n = m \\
+                \emptyset & \text{si } n \neq m
+            \end{cases}
+        \]
+
+        \item \textbf{Caso 2 (Un índice impar y uno par):} $A_{2n+1} \cap A_{2m}$
+        Dado que $A_{2m} = \{2m-1, 2m, 2m+1\}$, el elemento impar $2n+1 \in A_{2m}$ si y solo si $2n+1 = 2m-1$ o $2n+1 = 2m+1$.
+        \[
+            A_{2n+1} \cap A_{2m} = \begin{cases}
+                A_{2n+1} \in \mathcal{B} & \text{si } 2n+1 \in A_{2m} \\
+                \emptyset & \text{si } 2n+1 \notin A_{2m}
+            \end{cases}
+        \]
+
+        \item \textbf{Caso 3 ($B_1, B_2$ asociados a índices pares):} $A_{2n} \cap A_{2m}$ con $n \neq m$
+        \begin{itemize}
+            \item Si $|n - m| > 1$, los conjuntos son disjuntos ($A_{2n} \cap A_{2m} = \emptyset$).
+            \item Si $m = n+1$, intersecamos $A_{2n} = \{2n-1, 2n, 2n+1\}$ y $A_{2n+2} = \{2n+1, 2n+2, 2n+3\}$:
+            \[
+                A_{2n} \cap A_{2n+2} = \{2n+1\} = A_{2n+1} \in \mathcal{B}
+            \]
+        \end{itemize}
+    \end{itemize}
+
+    En todos los casos, la intersección de dos elementos $B_1, B_2 \in \mathcal{B}$ es el conjunto vacío o pertenece explícitamente a la familia $\mathcal{B}$. Por tanto, para todo $x \in B_1 \cap B_2$, basta tomar $B_3 = B_1 \cap B_2 \in \mathcal{B}$, cumpliéndose trivialmente que $x \in B_3 \subseteq B_1 \cap B_2$.
+
+    \medskip
+
+    Se concluye pues que la familia $\mathcal{B}$ cumple ambas condiciones y, por lo tanto, \textbf{sí es una base de abiertos} para una topología sobre $\mathbb{Z}$ (topología de la recta digital o de Khalimsky).
+\end{sol}\begin{ejer}
+    [28] Sean $\mathcal{B}_1$ y $\mathcal{B}_2$ dos bases de abiertos de $X$, que generan las topologías $\tau_1 = \langle \mathcal{B}_1 \rangle$ y $\tau_2 = \langle \mathcal{B}_2 \rangle$, respectivamente. Demuestra que $\tau_1$ es más fina que $\tau_2$ ($\tau_2 \subseteq \tau_1$) si y solo si para cada $x \in X$ y para cada $B_2 \in \mathcal{B}_2$ con $x \in B_2$, existe un básico $B_1 \in \mathcal{B}_1$ tal que $x \in B_1 \subseteq B_2$.
+\end{ejer}
+
+\begin{sol}
+    Queremos demostrar la equivalencia lógica:
+    \[
+        \tau_2 \subseteq \tau_1 \iff \left( \forall x \in X, \, \forall B_2 \in \mathcal{B}_2 \text{ con } x \in B_2, \, \exists B_1 \in \mathcal{B}_1 \text{ tal que } x \in B_1 \subseteq B_2 \right)
+    \]
+    $\Rightarrow)$ Supongamos que $\tau_1$ es más fina que $\tau_2$, es decir, $\tau_2 \subseteq \tau_1$.
+    
+    Sea $B_2 \in \mathcal{B}_2$ cualquier elemento básico de la segunda base y sea $x \in B_2$.
+    \begin{itemize}
+        \item Dado que $\mathcal{B}_2 \subseteq \tau_2$, se tiene que $B_2 \in \tau_2$.
+        \item Por hipótesis de inclusión de topologías ($\tau_2 \subseteq \tau_1$), se deduce que $B_2 \in \tau_1$.
+        \item Como $B_2$ es un conjunto abierto en la topología $\tau_1$ y $\mathcal{B}_1$ es una base de $\tau_1$, por definición de base de abiertos, para todo punto $x \in B_2$ existe un básico $B_1 \in \mathcal{B}_1$ tal que:
+        \[
+            x \in B_1 \subseteq B_2
+        \]
+    \end{itemize}
+    Esto prueba la implicación hacia la derecha.
+    $\Leftarrow)$ Supongamos ahora que se cumple la condición local: para todo $x \in X$ y todo $B_2 \in \mathcal{B}_2$ con $x \in B_2$, existe $B_1 \in \mathcal{B}_1$ tal que $x \in B_1 \subseteq B_2$. Queremos probar que $\tau_2 \subseteq \tau_1$.
+
+    Sea $U \in \tau_2$ un abierto arbitrario.
+    \begin{itemize}
+        \item Como $\mathcal{B}_2$ es base de $\tau_2$, el abierto $U$ se puede expresar como unión de elementos de $\mathcal{B}_2$, o equivalentemente, para cada $x \in U$ existe $B_{2, x} \in \mathcal{B}_2$ tal que $x \in B_{2, x} \subseteq U$.
+        \item Aplicando la hipótesis a cada punto $x \in U$ y su básico $B_{2, x} \in \mathcal{B}_2$, existe un elemento básico $B_{1, x} \in \mathcal{B}_1$ tal que:
+        \[
+            x \in B_{1, x} \subseteq B_{2, x} \subseteq U
+        \]
+        \item Así, para cada $x \in U$ hemos encontrado un básico $B_{1, x} \in \mathcal{B}_1$ tal que $x \in B_{1, x} \subseteq U$.
+        \item Por la caracterización de abiertos mediante bases, esto significa que $U$ se puede escribir como unión de elementos de $\mathcal{B}_1$:
+        \[
+            U = \bigcup_{x \in U} B_{1, x}
+        \]
+        Como cada $B_{1, x} \in \mathcal{B}_1 \subseteq \tau_1$ y la unión arbitraria de abiertos de $\tau_1$ es abierta en $\tau_1$, concluimos que $U \in \tau_1$.
+    \end{itemize}
+
+    Por tanto, todo abierto $U \in \tau_2$ pertenece a $\tau_1$, demostrando que $\tau_2 \subseteq \tau_1$ ($\tau_1$ es más fina que $\tau_2$).
+\end{sol}
+\begin{ejer}
+    [38 d) e) f)] \,
+    \begin{itemize}
+        \item[d)] $\overline{A \cup B} = \overline{A} \cup \overline{B}$
+        \item[e)] $\overline{A\cap B} \subset \overline{A} \cap \overline{B}$
+        \item[f)] En el caso no finito: $\bigcup_j \overline{A_j} \subset \overline{\bigcup A_j}$ y $(\bigcap_j A_j)^{\circ} \subset \bigcap_j A_j$. Encuentra un ejemplo en el que no se dé la igualdad.
+    \end{itemize}
+\end{ejer}
+\begin{sol}
+    \textbf{d) $\overline{A \cup B} = \overline{A} \cup \overline{B}$:}
+
+    Probamos la doble inclusión:
+
+    * ($\supseteq$) Como $A \subseteq A \cup B$, tomando cierres se cumple que $\overline{A} \subseteq \overline{A \cup B}$. Análogamente, como $B \subseteq A \cup B$, tenemos $\overline{B} \subseteq \overline{A \cup B}$. Por tanto, $\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$.
+
+    * ($\subseteq$) Como $\overline{A}$ y $\overline{B}$ son conjuntos cerrados en $X$, la unión finita de cerrados $\overline{A} \cup \overline{B}$ es un cerrado en $X$.
+    
+      Por otra parte, $A \subseteq \overline{A}$ y $B \subseteq \overline{B}$, luego $A \cup B \subseteq \overline{A} \cup \overline{B}$.
+    
+      Dado que el cierre $\overline{A \cup B}$ se define como el menor cerrado que contiene a $A \cup B$, y $\overline{A} \cup \overline{B}$ es un cerrado que contiene a $A \cup B$, se concluye que:
+      \[
+          \overline{A \cup B} \subseteq \overline{A} \cup \overline{B}
+      \]
+
+    Concluimos que $\overline{A \cup B} = \overline{A} \cup \overline{B}$.
+
+    \medskip
+
+    \textbf{e) $\overline{A \cap B} \subseteq \overline{A} \cap \overline{B}$:}
+
+    Como $A \cap B \subseteq A$, tomando cierres obtenemos que $\overline{A \cap B} \subseteq \overline{A}$.
+    
+    De igual modo, como $A \cap B \subseteq B$, tomando cierres se deduce que $\overline{A \cap B} \subseteq \overline{B}$.
+    
+    Por lo tanto, al estar contenido en ambos conjuntos, se satisface:
+    \[
+        \overline{A \cap B} \subseteq \overline{A} \cap \overline{B}
+    \]
+
+    \textit{Nota (Contraejemplo de la igualdad):} En $(\mathbb{R}, \mathcal{T}_d)$ con la topología usual, consideremos $A = (0, 1)$ y $B = (1, 2)$. Se tiene $A \cap B = \emptyset$, de modo que $\overline{A \cap B} = \emptyset$. Sin embargo, $\overline{A} = [0, 1]$ y $\overline{B} = [1, 2]$, por lo que $\overline{A} \cap \overline{B} = \{1\} \neq \emptyset$.
+
+    \medskip
+
+    \textbf{f) Caso para una familia infinita $\{A_j\}_{j \in J}$:}
+
+    \begin{enumerate}[label=\arabic*)]
+        \item \textbf{Inclusión para la unión infinita de cierres:}
+        Para cada $k \in J$, se cumple que $A_k \subseteq \bigcup_{j \in J} A_j$. Tomando cierres a ambos lados:
+        \[
+            \overline{A_k} \subseteq \overline{\bigcup_{j \in J} A_j} \quad \forall k \in J
+        \]
+        Puesto que la inclusión se satisface para cada índice $k \in J$, la unión de todos los subconjuntos también está contenida en el lado derecho:
+        \[
+            \bigcup_{j \in J} \overline{A_j} \subseteq \overline{\bigcup_{j \in J} A_j}
+        \]
+
+        \textit{Contraejemplo para la estricta inclusión:}
+        En $\mathbb{R}$ con la topología usual $\mathcal{T}_d$, consideremos la familia infinita de puntos aislados $A_n = \{\frac{1}{n}\}$ para cada $n \in \mathbb{N}^+$.
+        * Como cada $A_n$ es un conjunto finito, es cerrado, luego $\overline{A_n} = \{\frac{1}{n}\}$. Por tanto:
+          \[
+              \bigcup_{n \in \mathbb{N}^+} \overline{A_n} = \left\{\frac{1}{n} : n \in \mathbb{N}^+\right\}
+          \]
+        * Por otro lado, el cierre de la unión es:
+          \[
+              \overline{\bigcup_{n \in \mathbb{N}^+} A_n} = \overline{\left\{\frac{1}{n} : n \in \mathbb{N}^+\right\}} = \left\{\frac{1}{n} : n \in \mathbb{N}^+\right\} \cup \{0\}
+          \]
+        Como $0 \in \overline{\bigcup_{n \in \mathbb{N}^+} A_n}$ pero $0 \notin \bigcup_{n \in \mathbb{N}^+} \overline{A_n}$, la inclusión es estricta.
+
+        \medskip
+
+        \item \textbf{Inclusión para la intersección infinita de interiores:}
+        Para cada $k \in J$, se cumple que $\bigcap_{j \in J} A_j \subseteq A_k$. Tomando interiores a ambos lados:
+        \[
+            \left(\bigcap_{j \in J} A_j\right)^\circ \subseteq A_k^\circ \quad \forall k \in J
+        \]
+        Dado que se satisface para todo $k \in J$, se concluye que:
+        \[
+            \left(\bigcap_{j \in J} A_j\right)^\circ \subseteq \bigcap_{j \in J} A_j^\circ
+        \]
+
+        \textit{Contraejemplo para la estricta inclusión:}
+        En $\mathbb{R}$ con la topología usual $\mathcal{T}_d$, consideremos la familia de abiertos $A_n = (-\frac{1}{n}, \frac{1}{n})$ para cada $n \in \mathbb{N}^+$.
+        * Como cada $A_n$ es un abierto, $A_n^\circ = A_n$. Por tanto:
+          \[
+              \bigcap_{n \in \mathbb{N}^+} A_n^\circ = \bigcap_{n \in \mathbb{N}^+} \left(-\frac{1}{n}, \frac{1}{n}\right) = \{0\}
+          \]
+        * Sin embargo, la intersección previa de los conjuntos es $\bigcap_{n \in \mathbb{N}^+} A_n = \{0\}$, cuyo interior es:
+          \[
+              \left(\bigcap_{n \in \mathbb{N}^+} A_n\right)^\circ = \{0\}^\circ = \emptyset
+          \]
+        Como $\emptyset \subsetneq \{0\}$, la inclusión es estricta.
+    \end{enumerate}
+\end{sol}
+
+\begin{ejer}
+    [40] Sea $\mathcal{T}$ la topología de $\mathbb{N}$ formada por $\mathcal{T} = \{\emptyset, \mathbb{N}\} \cup \{\{1, \dots, n\} \mid n \in \mathbb{N}\}$.
+    \begin{enumerate}[label=\alph*)]
+        \item Encuentra los abiertos que contienen al punto $6$.
+        \item Encuentra los puntos de acumulación de $A = \{4, 13, 23, 37\}$.
+        \item Determina los subconjuntos cerrados.
+        \item Calcula el interior y el cierre de $A$, $\{7, 24, 85\}$ y $\{3, 6, 9, 12, \dots\}$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{sol}
+    La topología dada está formada por las secciones iniciales finitas de $\mathbb{N}$, además de $\emptyset$ y $\mathbb{N}$. Notemos que $U \in \mathcal{T}$ no vacío es de la forma $U_n = \{1, 2, \dots, n\}$ para algún $n \in \mathbb{N}$, o bien $U = \mathbb{N}$.
+
+    a) Abiertos que contienen al punto $6$:
+    
+    Un abierto $U_n = \{1, 2, \dots, n\}$ contiene a $6$ si y solo si $n \geq 6$. Añadiendo el abierto total $\mathbb{N}$, la familia de abiertos que contienen a $6$ es:
+    \[
+        \mathcal{T}_6 = \{\{1, 2, \dots, n\} \mid n \geq 6, \, n \in \mathbb{N}\} \cup \{\mathbb{N}\}
+    \]
+
+    b) Puntos de acumulación de $A = \{4, 13, 23, 37\}$:
+    
+    Un punto $x \in \mathbb{N}$ es de acumulación de $A$ ($x \in A'$) si para todo abierto $U_x$ que contiene a $x$ se cumple que $(U_x - \{x\}) \cap A \neq \emptyset$.
+    
+    * El abierto propio más pequeño que contiene a $x$ es $U_x = \{1, 2, \dots, x\}$.
+    * Por tanto, $x \in A' \iff (\{1, 2, \dots, x\} - \{x\}) \cap A \neq \emptyset \iff \{1, 2, \dots, x-1\} \cap A \neq \emptyset$.
+    * El elemento mínimo de $A$ es $4$. 
+      * Si $x \leq 4$, la sección previa $\{1, \dots, x-1\}$ no contiene a ningún elemento de $A$, luego no interseca a $A$.
+      * Si $x \geq 5$, la sección previa $\{1, \dots, x-1\}$ contiene al $4 \in A$, luego la intersección es no vacía.
+    
+    Por consiguiente, el conjunto de puntos de acumulación es:
+    \[
+        A' = \{x \in \mathbb{N} \mid x \geq 5\} = \{5, 6, 7, 8, \dots\}
+    \]
+
+    c) Subconjuntos cerrados:
+    
+    Los cerrados son los complementarios de los abiertos en $\mathbb{N}$:
+    * $(\mathbb{N} - \emptyset) = \mathbb{N}$ y $(\mathbb{N} - \mathbb{N}) = \emptyset$.
+    * $\mathbb{N} - \{1, 2, \dots, n\} = \{n+1, n+2, n+3, \dots\}$.
+    
+    Por tanto, la familia de cerrados es:
+    \[
+        \mathcal{C}_{\mathcal{T}} = \{\emptyset, \mathbb{N}\} \cup \{\{n+1, n+2, \dots\} \mid n \in \mathbb{N}\}
+    \]
+
+    d) Interior y cierre de los conjuntos dados:
+
+    \begin{enumerate}[label=\arabic*)]
+        \item \textbf{Para $A = \{4, 13, 23, 37\}$:}
+        * \textbf{Interior $A^\circ$:} Como todos los abiertos propios no vacíos contienen obligatoriamente al $1 \notin A$, ningún abierto no vacío puede estar contenido en $A$. Por tanto:
+          \[ A^\circ = \emptyset \]
+        * \textbf{Cierre $\overline{A}$:} $\overline{A} = A \cup A' = \{4, 13, 23, 37\} \cup \{5, 6, 7, \dots\} = \{4, 5, 6, 7, \dots\}$.
+
+        \medskip
+
+        \item \textbf{Para $B = \{7, 24, 85\}$:}
+        * \textbf{Interior $B^\circ$:} Análogamente, como $1 \notin B$, no existe ningún abierto no vacío contenido en $B$. Por tanto:
+          \[ B^\circ = \emptyset \]
+        * \textbf{Cierre $\overline{B}$:} El elemento mínimo de $B$ es $7$, por lo que $B' = \{8, 9, 10, \dots\}$. Luego:
+          \[ \overline{B} = B \cup B' = \{7, 8, 9, 10, \dots\} \]
+
+        \medskip
+
+        \item \textbf{Para $C = \{3, 6, 9, 12, \dots\} = 3\mathbb{N}$:}
+        * \textbf{Interior $C^\circ$:} De nuevo, como $1 \notin C$, ningún abierto no vacío está contenido en $C$. Por tanto:
+          \[ C^\circ = \emptyset \]
+        * \textbf{Cierre $\overline{C}$:} El elemento mínimo de $C$ es $3$, luego $C' = \{4, 5, 6, \dots\}$. Por tanto:
+          \[ \overline{C} = C \cup C' = \{3, 4, 5, 6, \dots\} \]
+    \end{enumerate}
+\end{sol}
+\section{Seminario 3}
+\begin{ejer}
+    [49 a),b)] Sea $X$ un espacio topológico y $A \subseteq X$ un subconjunto. Demuestra las siguientes propiedades:
+    \begin{enumerate}[a)]
+        \item $A' = \{x \in \overline{A} : \overline{A} = \overline{A - \{x\}}\}$
+    \item $ \text{Si } \delta(A_1) = A_2 \quad \text{y} \quad \delta(A_2) = A_1, \quad \text{entonces } A_1 = A_2.$
+    \end{enumerate}
+    
+\end{ejer}
+\begin{sol}
+    \begin{enumerate}
+    \item[a)] Recordemos que $\overline{A} = A \cup A'$ y que un punto $x \in X$ pertenece a la adherencia $\overline{A}$ si y solo si todo abierto $U$ que contiene a $x$ cumple $U \cap A \neq \emptyset$. Por otra parte, $x \in A'$ si y solo si todo abierto $U$ que contiene a $x$ verifica que $(U - \{x\}) \cap A \neq \emptyset$ (o lo que es equivalente, $U \cap (A - \{x\}) \neq \emptyset$).
+
+    Queremos probar la igualdad de conjuntos demostrando la doble inclusión entre $A'$ y el conjunto $S = \{x \in \overline{A} : \overline{A} = \overline{A - \{x\}}\}$.
+
+    \medskip
+
+   ($\subseteq$) Sea $x \in A'$.
+    \begin{itemize}
+        \item Dado que $A' \subseteq \overline{A}$, es claro que $x \in \overline{A}$.
+        \item Queremos probar que $\overline{A} = \overline{A - \{x\}}$. 
+        
+        Dado que $A - \{x\} \subseteq A$, al aplicar el operador de cierre en ambos lados se cumple trivialmente la inclusión $\overline{A - \{x\}} \subseteq \overline{A}$.
+
+        Para la inclusión recíproca ($\overline{A} \subseteq \overline{A - \{x\}}$), tomemos cualquier punto $y \in \overline{A}$ y cualquier abierto $U$ tal que $y \in U$.
+        \begin{itemize}
+            \item Si $y \neq x$: Como $y \in \overline{A}$, el abierto $U$ interseca a $A$. Si por un lado la intersección $U \cap A$ únicamente contuviera al punto $x$, se tendría que $(U - \{x\}) \cap A = \emptyset$, lo que contradiría que $x \in A'$. Por tanto, debe existir al menos un elemento $z \in U \cap A$ con $z \neq x$, lo que implica que $U \cap (A - \{x\}) \neq \emptyset$.
+            \item Si $y = x$: Como $x \in A'$, por definición de punto de acumulación, para el abierto $U$ con $x \in U$ se verifica directamente que $U \cap (A - \{x\}) \neq \emptyset$.
+        \end{itemize}
+        En ambos casos, todo abierto que contiene a $y$ interseca a $A - \{x\}$, luego $y \in \overline{A - \{x\}}$. Deducimos que $\overline{A} \subseteq \overline{A - \{x\}}$.
+    \end{itemize}
+    Por consiguiente, $\overline{A} = \overline{A - \{x\}}$, lo que demuestra que $x \in S$.
+
+    \medskip
+
+   ($\supseteq$) Sea $x \in S$, es decir, $x \in \overline{A}$ tal que $\overline{A} = \overline{A - \{x\}}$.
+
+    Sea $U$ un abierto cualquiera tal que $x \in U$.
+    \begin{itemize}
+        \item Puesto que $x \in \overline{A}$ y por hipótesis $\overline{A} = \overline{A - \{x\}}$, tenemos que $x \in \overline{A - \{x\}}$.
+        \item Por la caracterización de los puntos del cierre por abiertos, al ser $x \in \overline{A - \{x\}}$ y $U$ un abierto con $x \in U$, se satisface que:
+        \[
+            U \cap (A - \{x\}) \neq \emptyset
+        \]
+        \item Esto equivale exactamente a que $(U - \{x\}) \cap A \neq \emptyset$.
+    \end{itemize}
+    Como esto es cierto para todo abierto $U$ que contiene a $x$, concluimos por definición que $x \in A'$.
+
+    \medskip
+
+    Por lo tanto, queda probada la igualdad $A' = \{x \in \overline{A} : \overline{A} = \overline{A - \{x\}}\}$.
+    \item[b)]
+    La afirmación es \textbf{cierta}. 
+
+    Recordemos las siguientes propiedades fundamentales del operador frontera $\delta(A) = \operatorname{Fr}(A)$ sobre cualquier subconjunto $A \subseteq X$:
+    \begin{enumerate}[label=\arabic*)]
+        \item Por definición, $\delta(A) = \overline{A} \cap \overline{X - A}$. Al ser intersección de dos conjuntos cerrados en $X$, el conjunto $\delta(A)$ es siempre \textbf{cerrado} en $X$.
+        \item Se verifica que $\delta(\delta(A)) \subseteq \delta(A)$ para todo subconjunto $A \subseteq X$. En particular, si un conjunto $C$ es cerrado, su frontera está contenida en él: $\delta(C) \subseteq C$.
+    \end{enumerate}
+
+    \textit{Demostración:}
+
+    Supongamos que $\delta(A_1) = A_2$ y $\delta(A_2) = A_1$.
+
+    \begin{itemize}
+        \item Como $A_2 = \delta(A_1)$, por la propiedad (1) tenemos que $A_2$ es un conjunto \textbf{cerrado} en $X$.
+        \item Análogamente, como $A_1 = \delta(A_2)$, por la propiedad (1) tenemos que $A_1$ es un conjunto \textbf{cerrado} en $X$.
+    \end{itemize}
+
+    Aplicando ahora el operador frontera a las hipótesis:
+    \begin{itemize}
+        \item Al calcular la frontera de $A_2$, usando que $A_2 = \delta(A_1)$, obtenemos:
+        \[
+            A_1 = \delta(A_2) = \delta(\delta(A_1))
+        \]
+        Como la frontera de la frontera está siempre contenida en la frontera original ($\delta(\delta(A_1)) \subseteq \delta(A_1)$), se deduce que:
+        \[
+            A_1 \subseteq \delta(A_1) = A_2 \implies A_1 \subseteq A_2
+        \]
+
+        \item De forma completamente análoga, al calcular la frontera de $A_1$, usando que $A_1 = \delta(A_2)$, obtenemos:
+        \[
+            A_2 = \delta(A_1) = \delta(\delta(A_2)) \subseteq \delta(A_2) = A_1 \implies A_2 \subseteq A_1
+        \]
+    \end{itemize}
+
+    Teniendo ambas inclusiones ($A_1 \subseteq A_2$ y $A_2 \subseteq A_1$), se concluye necesariamente que:
+    \[
+        A_1 = A_2
+    \]
+    
+    \end{enumerate}
+\end{sol}
+\begin{ejer}
+[52] Demuestra que todo subconjunto finito $A$ de $\bb R$ con la topología usual es cerrado. Prueba además que
+$\delta(A) = A$.
+\end{ejer}
+
+\begin{ejer}
+[57] Si $A$ es un subconjunto denso de un espacio topológico y $U$ es abierto, prueba que $U\subset \overline{A\cap U}$.
+\end{ejer}
+\begin{sol}
+    Recordemos que un subconjunto $A \subseteq X$ es denso si su cierre es el espacio total ($\overline{A} = X$), lo cual equivale a que todo abierto no vacío $V \subseteq X$ corta a $A$ ($V \cap A \neq \emptyset$).
+
+    Por otra parte, un punto $x \in X$ pertenece a la adherencia $\overline{S}$ de un subconjunto $S \subseteq X$ si y solo si para todo abierto $V$ que contiene a $x$ se verifica que $V \cap S \neq \emptyset$.
+
+    \medskip
+
+    \textit{Demostración:}
+
+    Sea $x \in U$. Queremos demostrar que $x \in \overline{A \cap U}$.
+
+    Para ello, sea $V$ un abierto cualquiera de $X$ tal que $x \in V$.
+    \begin{itemize}
+        \item Como $U$ es un abierto por hipótesis y $V$ es abierto, la intersección $W = V \cap U$ es un abierto en $X$.
+        \item Además, dado que $x \in V$ y $x \in U$, tenemos que $x \in V \cap U = W$, por lo que $W$ es un abierto no vacío.
+        \item Al ser $A$ denso en $X$ y $W$ un abierto no vacío, necesariamente $W$ interseca a $A$:
+        \[
+            W \cap A \neq \emptyset \implies (V \cap U) \cap A \neq \emptyset
+        \]
+        \item Reagrupando la intersección por la propiedad asociativa y conmutativa:
+        \[
+            V \cap (A \cap U) \neq \emptyset
+        \]
+    \end{itemize}
+
+    Puesto que hemos probado que cualquier abierto $V$ que contiene a $x$ cumple $V \cap (A \cap U) \neq \emptyset$, por la caracterización de los puntos de la adherencia por abiertos concluimos que:
+    \[
+        x \in \overline{A \cap U}
+    \]
+
+    Dado que esto es cierto para todo $x \in U$, queda demostrada la inclusión $U \subseteq \overline{A \cap U}$.
+\end{sol}
+
+\section{Seminario 4}
+\begin{ejer}[66]
+En $(\mathbb{R}, \tau_{\{0\}} = \text{topología del } 0\text{-incluido})$:
+\[
+    \lim_{n \to \infty} \left(1 + \frac{1}{n}\right) \ne 1. \text{}
+\]
+Ver si tiene límite y encontrar una sucesión no constante que converja a $1$.
+\end{ejer}
+
+\begin{sol}
+Consideramos $U = \{0, 1\}$ abierto porque contiene al $0$.
+\[
+    U \cap \left\{1 + \frac{1}{n}\right\}_{n \in \mathbb{N}} = \emptyset \implies 1 \text{ no es límite} \text{}.
+\]
+
+Sea $a \in \mathbb{R} \implies$ ¿Puede ser límite?
+\[
+    V = \{0, a\} \text{ abierto} \text{}
+\]
+\[
+    V \cap \left\{1 + \frac{1}{n}\right\}_{n \in \mathbb{N}} = \begin{cases} \emptyset \\ \{a\} \end{cases} \implies a \text{ no puede ser límite} \text{}.
+\]
+
+$\{x_n\}_{n \in \mathbb{N}}$, $x_n$ todos distintos entre sí $\implies$ No tiene límite.
+\[
+    V \cap \{x_n\} = \begin{cases} \emptyset \\ a \end{cases} \text{}
+\]
+
+\hrulefill
+
+\medskip
+$\{0, 1, 0, 1, \ldots\} \implies \forall U \text{ abierto con } 1 \in U \implies 0 \in U$
+\[
+    U \cap \{0, 1, 0, 1, \ldots\} = \{0, 1, 0, 1, \ldots\} \implies \text{Hay límite } (1) \text{}.
+\]
+\end{sol}
+
+\bigskip
+
+\begin{ejer}[67]
+En $(\mathbb{R}, \tau_{\text{cof}})$:
+
+$\{x_n = n\}_{n \in \mathbb{N}} = \mathbb{N} \subset \mathbb{R}$. ¿Tiene límite?
+
+Encontrar una sucesión no convergente.
+\end{ejer}
+
+\begin{sol}
+Sea $a \in \mathbb{R}$.
+\[
+    U_a \ni a \text{ abierto} = \mathbb{R} - \{a_1, \ldots, a_r\} \quad (\text{su complementario es finito}) \text{}.
+\]
+
+Sea $n_0 := \lfloor \max\{a_1, \ldots, a_r\} \rfloor + 1$ (parte entera $+ 1$).
+\[
+    \forall n \ge n_0, \quad x_n = n \in U \text{}.
+\]
+
+$\{x_n = 1/n\}_{n \in \mathbb{N}} \implies$ mismo argumento.
+
+\medskip
+\textbf{Encontrar una sucesión no convergente:}
+
+$\{0, 1, 0, 1, 0, 1, \ldots\}$
+
+\begin{itemize}
+    \item $a \ne 0, 1$ ¿puede ser límite? $\implies a\in U_a = \mathbb{R} - \{0, 1\} \implies$ no tiene ningún término de la sucesión ($U_a \cap \{x_n\} = \emptyset$).
+    \item $a = 0 \implies 0 \in U_0 = \mathbb{R} - \{1\} \implies$ No es límite (a partir de uno no están todos).
+    \item Ídem con $1 \implies U_1 = (\mathbb{R} - \{0\})$.
+\end{itemize}
+\end{sol}
+\begin{ejer}[70]
+Si en un espacio topológico $X$ toda sucesión que tenga límite, su límite es único, entonces $X$ es $T_1$.
+\end{ejer}
+
+\begin{sol}
+Sea $x \in X$. Veamos cuánto vale $\overline{\{x\}}$.
+
+Supongamos que existe $y \in \overline{\{x\}}$ con $y \ne x$.
+
+Consideramos la sucesión constante $\{x_n\}_{n \in \mathbb{N}}$ dada por $x_n = x$ para todo $n \in \mathbb{N}$:
+\begin{itemize}
+    \item Trivialmente, $\{x_n\} \longrightarrow x$.
+    \item Por otro lado, como $y \in \overline{\{x\}}$, para todo abierto $U$ con $y \in U$ se tiene que $U \cap \{x\} \ne \emptyset$, es decir, $x \in U$. Por tanto, para todo $n \in \mathbb{N}$ se cumple $x_n = x \in U$, lo cual implica que $\{x_n\} \longrightarrow y$.
+\end{itemize}
+
+Por hipótesis, el límite de la sucesión es único, luego debe ser $x = y$, contradicción con que $y \ne x$.
+
+Por tanto, no existe tal $y \ne x$, de modo que $\overline{\{x\}} = \{x\}$. Como todos los puntos unitarios son cerrados, se concluye que $X$ es $T_1$.
+\end{sol}
+
+\bigskip
+
+\begin{ejer}[76]
+Si $X$ es $T_1$, entonces para todo $x \in X$ se verifica que:
+\[
+    \{x\} = \bigcap_{\substack{U \text{ abierto} \\ x \in U}} U.
+\]
+\end{ejer}
+
+\begin{sol}
+\begin{itemize}
+    \item[$\subseteq)$] Obviamente, $\{x\} \subseteq \displaystyle\bigcap_{\substack{U \text{ abierto} \\ x \in U}} U$.
+    
+    \item[$\supseteq)$] Sea $y \in \displaystyle\bigcap_{\substack{U \text{ abierto} \\ x \in U}} U$ con $y \ne x$.
+    
+    Como $X$ es $T_1$ y $x \ne y$, existen abiertos $U_x$ con $x \in U_x$ e $y \notin U_x$ (basta tomar $U_x = X - \{y\}$, que es abierto por ser $\{y\}$ cerrado en un espacio $T_1$).
+    
+    Pero al ser $U_x$ un abierto que contiene a $x$, por definición de la intersección se tiene:
+    \[
+        y \in \bigcap_{\substack{U \text{ abierto} \\ x \in U}} U \subseteq U_x \implies y \in U_x,
+    \]
+    lo cual es una contradicción pues $y \notin U_x$.
+\end{itemize}
+Por tanto, no existe tal $y \ne x$, concluyendo la igualdad.
+\end{sol}
+
+\bigskip
+
+\begin{ejer}[77]
+Si $X$ es $T_1$, entonces para todo subconjunto $Y \subseteq X$, se verifica que:
+\[
+    Y = \bigcap_{\substack{U \text{ abierto} \\ Y \subseteq U}} U.
+\]
+\end{ejer}
+
+\begin{sol}
+\begin{itemize}
+    \item[$\subseteq)$] Obviamente se tiene $Y \subseteq \displaystyle\bigcap_{\substack{U \text{ abierto} \\ Y \subseteq U}} U$.
+    
+    \item[$\supseteq)$] Sea $x \in \displaystyle\bigcap_{\substack{U \text{ abierto} \\ Y \subseteq U}} U$ con $x \notin Y$.
+    
+    Como $X$ es $T_1$, el conjunto unitario $\{x\}$ es cerrado, por lo que su complementario $X - \{x\}$ es un abierto de $X$.
+    
+    Puesto que $x \notin Y$, se cumple que $Y \subseteq X - \{x\}$. Siendo $X - \{x\}$ un abierto que contiene a $Y$, por definición de la intersección se debe tener:
+    \[
+        x \in \bigcap_{\substack{U \text{ abierto} \\ Y \subseteq U}} U \subseteq X - \{x\} \implies x \in X - \{x\},
+    \]
+    lo cual es una contradicción.
+\end{itemize}
+Por tanto, no puede existir $x \notin Y$ en dicha intersección, demostrando que $Y = \displaystyle\bigcap_{\substack{U \text{ abierto} \\ Y \subseteq U}} U$.
+\end{sol}
+
+\bigskip
+
+\begin{ejer}[84 (Caso general 53)]
+Sea $X$ un espacio topológico $T_1$ y sea $A \subseteq X$ un subconjunto. Si $x \in A'$ (es decir, $x$ es punto de acumulación de $A$), entonces para todo abierto $U$ con $x \in U$, el conjunto $U \cap A$ es infinito.
+\end{ejer}
+
+\begin{sol}
+Supongamos por contradicción que existe un abierto $U$ con $x \in U$ tal que $U \cap A$ es finito:
+\[
+    U \cap A = \{a_1, \ldots, a_r\}.
+\]
+Distinguimos dos casos según si $x \in A$ o $x \notin A$:
+\begin{itemize}
+    \item \textbf{Caso 1:} Si $x \in A$, entonces $x \in U \cap A$, por lo que $x = a_i$ para algún índice $i \in \{1, \ldots, r\}$.
+    
+    Consideramos el conjunto:
+    \[
+        V := U - \{a_1, \ldots, \hat{a}_i, \ldots, a_r\} = U \cap \left(X - \{a_1, \ldots, \hat{a}_i, \ldots, a_r\}\right),
+    \]
+    donde $\hat{a}_i$ denota que omitimos el elemento $a_i = x$. Como $X$ es $T_1$, el conjunto finito $\{a_1, \ldots, \hat{a}_i, \ldots, a_r\}$ es cerrado, luego su complementario es abierto y, por ende, $V$ es abierto con $x \in V$.
+    
+    Sin embargo:
+    \[
+        V \cap A = \{a_i\} = \{x\} \implies (V - \{x\}) \cap A = \emptyset,
+    \]
+    lo cual contradice que $x$ sea punto de acumulación de $A$.
+
+    \item \textbf{Caso 2:} Si $x \notin A$, entonces $x \notin U \cap A = \{a_1, \ldots, a_r\}$.
+    
+    Definimos el abierto:
+    \[
+        V := U - \{a_1, \ldots, a_r\} = U \cap \left(X - \{a_1, \ldots, a_r\}\right).
+    \]
+    Al ser $\{a_1, \ldots, a_r\}$ cerrado en $X$, $V$ es un abierto que contiene a $x$. Pero se tiene que:
+    \[
+        V \cap A = (U \cap A) - \{a_1, \ldots, a_r\} = \emptyset \implies (V - \{x\}) \cap A = \emptyset,
+    \]
+    lo cual contradice nuevamente que $x \in A'$.
+\end{itemize}
+En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser infinito.
+\end{sol}
+\section{Seminario 5} %57; 84; 88; 91 a),c) y e); 93
+\begin{ejer}
+    [57] Si $A$ es un subconjunto denso de un espacio topológico y $U$ es abierto, prueba que $U \subseteq \overline{A \cap U}$.
+\end{ejer}
+\begin{sol}
+    Veamos que si $x \in U$ entonces $x\in \overline{A \cap U}$. Como $A$ es denso, $\overline{A}=X$ luego $x \in \overline{A}$, es decir, todo abierto $x \in V \subset \overline{A}$ verifica que $V \cap A \neq \emptyset$. Lo mismo pasa con el abierto $U\cap V$, que verifica que $x\in U \cap V$ al menos, luego por ser $A$ denso
+    $$\emptyset \neq (U \cap V) \cap A = V \cap (A \cap U) $$
+    que por la definici\'on de cierre implica que $V \subset \overline{A \cap U} \Rightarrow x \in \overline{A \cap U}$. 
+\end{sol}\begin{ejer}
+    [84] Demostrar que $\mathbb{R}$ con la topología $\mathcal{T}_{\rightarrow} = \{(a, \infty) : a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\}$ es un espacio topológico $T_0$ y normal, pero no es regular ni $T_1$. ¿Es $T_2$?
+\end{ejer}
+
+\begin{sol}
+    Caracterizamos primero los conjuntos cerrados de $(\mathbb{R}, \mathcal{T}_{\rightarrow})$, los cuales corresponden a los complementarios de los abiertos:
+    \[
+        \mathcal{C}_{\tau} = \{(-\infty, a] : a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\}
+    \]
+
+    \noindent \textbf{1. Es un espacio $T_0$:}
+    Sean $x, y \in \mathbb{R}$ dos puntos distintos. Sin pérdida de generalidad, supongamos que $x < y$.
+    Consideramos el punto medio $c = \frac{x+y}{2}$, de modo que $x < c < y$. El conjunto $U = (c, \infty)$ es un abierto de $\mathcal{T}_{\rightarrow}$ tal que $y \in U$ pero $x \notin U$. Por tanto, el espacio es $T_0$.
+
+    \medskip
+
+    \noindent \textbf{2. No es $T_1$ (y en consecuencia no es $T_2$):}
+    Sean $x, y \in \mathbb{R}$ con $x < y$. Todo abierto no vacío $U \in \mathcal{T}_{\rightarrow}$ que contiene a $x$ es de la forma $U = (a, \infty)$ con $a < x$. Como $x < y$, se deduce que $a < y$, por lo que $y \in U$ necesariamente.
+    
+    Así, es imposible encontrar un abierto que contenga a $x$ y no contenga a $y$. Por consiguiente, el espacio no es $T_1$. Como todo espacio $T_2$ (Hausdorff) es $T_1$, concluimos directamente que tampoco es $T_2$.
+
+    \medskip
+
+    \noindent \textbf{3. No es regular:}
+    Para probar que no es regular, basta encontrar un punto $x \in \mathbb{R}$ y un cerrado $C$ tales que $x \notin C$ y no puedan separarse por abiertos disjuntos.
+    
+    Consideremos el cerrado $C = (-\infty, 0]$ y el punto $x = 1 \notin C$. 
+    * Todo abierto $U$ que contiene a $x = 1$ es de la forma $U = (a, \infty)$ con $a < 1$.
+    * El único abierto de $\mathcal{T}_{\rightarrow}$ que contiene a todo el cerrado $C = (-\infty, 0]$ es el espacio total $\mathbb{R}$ (ya que ningún intervalo de la forma $(b, \infty)$ puede contener a $(-\infty, 0]$).
+    
+    Por lo tanto, si $V$ es un abierto tal que $C \subset V$, entonces $V = \mathbb{R}$. Se sigue que $U \cap V = U \cap \mathbb{R} = U \neq \emptyset$, por lo que no existen abiertos disjuntos que separen a $x$ y a $C$. Luego el espacio no es regular.
+
+    \medskip
+
+    \noindent \textbf{4. Es un espacio normal:}
+    Sean $C_1, C_2 \subset \mathbb{R}$ dos conjuntos cerrados no vacíos y disjuntos ($C_1 \cap C_2 = \emptyset$).
+    
+    Los cerrados propios de $\mathcal{T}_{\rightarrow}$ son de la forma $(-\infty, a]$. Notemos que dos cerrados propios cualesquiera $(-\infty, a]$ y $(-\infty, b]$ nunca son disjuntos, pues su intersección contiene al menos al intervalo $(-\infty, \min(a,b)] \neq \emptyset$.
+    
+    Por tanto, los únicos pares de cerrados disjuntos en $(\mathbb{R}, \mathcal{T}_{\rightarrow})$ involucran al conjunto vacío $\emptyset$. Dado que el conjunto vacío está contenido en el abierto $\emptyset$, el cual es disjunto con cualquier otro abierto, la condición de normalidad se satisface de forma trivial.
+\end{sol}
+\begin{ejer}
+    [88] Sea $X$ un conjunto y $\tau_{cf}$ la topología cofinita. Demuestra que $f: (X, \tau_{cf}) \longrightarrow (X, \tau_{cf})$ es continua si y sólo si para todo $x \in X$ se cumple $f^{-1}(x)$ es finito.
+\end{ejer}
+\begin{sol}
+    Como se ha demostrado en teor\'ia, $f$ es continua si y solo si $f^{-1}(C)$ es cerrado $\forall \, C \subset X$ cerrado. Los cerrados son m\'as c\'omodos de trabajar en la topolog\'ia cofinita, pues son finitos, as\'i que as\'i lo haremos. 
+
+    $\Rightarrow)$ $f$ es continua, por lo que $f^{-1}(C)$ es cerrado. $\{x\}$ es claramente finito, por lo que es cerrado, luego por ser $f$ continua, $f^{-1}(x)$ es cerrado luego finito.
+
+    $\Leftarrow)$ Sea $f^{-1}(x)$ finito, es cerrado. Sea $C \subset X$ un cerrado cualquiera, queremos comprobar que $f^{-1}(C)$ es cerrado. Por ser $C$ cerrado, es finito, es decir, $C = \{x_1, \ldots, x_m\}$ para $x_1, \ldots, x_m$, de forma que 
+    $$f^{-1}(C) = f^{-1}(x_1\cup \cdots\cup x_m) = f^{-1}(x_1) \cup \cdots \cup f^{-1}(x_m)$$
+    y como cada $f^{-1}(x_i)$ es finito por hip\'otesis, la uni\'on finita de ellos tambi\'en, por lo que $f^{-1}(C)$ es finito, luego cerrado, como quer\'iamos probar. 
+\end{sol}
+\begin{ejer}
+    [91 a), c), e)] Sea $f : X \longrightarrow Y$ una aplicación entre dos espacios topológicos. Prueba que:
+    \begin{itemize}
+        \item[a)] $f$ es continua si y solo si $f^{-1}(B^{\circ}) \subset \left(f^{-1}(B)\right)^{\circ}$ para todo $B \subset Y$.
+\begin{sol}
+    $\Rightarrow)$ Supongamos que $f$ es continua y sea $B \subset Y$ un subconjunto cualquiera.
+
+    Por definición de interior, $B^{\circ}$ es un conjunto abierto en $Y$ contenido en $B$, es decir, $B^{\circ} \subset B$.
+    
+    Como $f$ es continua, la antiimagen de todo abierto en $Y$ es abierta en $X$, por lo que $f^{-1}(B^{\circ})$ es un conjunto abierto en $X$. Además, la antiimagen preserva las inclusiones, de modo que:
+    \[
+        f^{-1}(B^{\circ}) \subset f^{-1}(B)
+    \]
+    Por definición, el interior de un conjunto es la unión de todos los abiertos contenidos en él:
+    \[
+        \left(f^{-1}(B)\right)^{\circ} = \bigcup \{ U \subset X \mid U \text{ es abierto y } U \subset f^{-1}(B) \}
+    \]
+    Puesto que $f^{-1}(B^{\circ})$ es uno de esos abiertos contenidos en $f^{-1}(B)$ y todo elemento de una familia está contenido en su unión ($A_i \subset \bigcup A_i$), concluimos directamente que:
+    \[
+        f^{-1}(B^{\circ}) \subset \left(f^{-1}(B)\right)^{\circ}
+    \]
+    como queríamos probar.
+
+    \medskip
+
+    $\Leftarrow)$ Supongamos ahora que $f^{-1}(B^{\circ}) \subset \left(f^{-1}(B)\right)^{\circ}$ para todo $B \subset Y$. Queremos probar que $f$ es continua, lo cual equivale a demostrar que la antiimagen de cualquier abierto en $Y$ es abierta en $X$.
+
+    Sea $V \subset Y$ un conjunto abierto. Dado que $V$ es abierto, coincide con su interior, esto es, $V^{\circ} = V$. Aplicando la hipótesis al conjunto $V$, obtenemos:
+    \[
+        f^{-1}(V) = f^{-1}(V^{\circ}) \subset \left(f^{-1}(V)\right)^{\circ}
+    \]
+    Por otra parte, por la propia definición de interior siempre se verifica que $\left(f^{-1}(V)\right)^{\circ} \subset f^{-1}(V)$.
+
+    Al tener ambas inclusiones, concluimos que:
+    \[
+        f^{-1}(V) = \left(f^{-1}(V)\right)^{\circ}
+    \]
+    Lo cual demuestra que $f^{-1}(V)$ coincide con su interior y, por lo tanto, es un conjunto abierto en $X$. Esto demuestra que $f$ es continua.
+\end{sol}
+        \item[b)] $f$ es continua si y solo si $\overline{f^{-1}(B)} \subset f^{-1} (\overline{B})$ para todo $B \subset Y$. 
+        \item[c)] $f$ es continua si y solo si $f(\overline{A}) \subset \overline{f(A)}$ para todo $A \subset X$.
+\begin{sol}
+    $\Rightarrow)$ Supongamos que $f$ es continua y sea $A \subset X$ un subconjunto cualquiera. 
+    
+    Por definición de clausura, el conjunto $\overline{f(A)}$ es cerrado en $Y$. Como $f$ es continua, la antiimagen de cualquier cerrado es cerrada, por lo que $f^{-1}(\overline{f(A)})$ es un conjunto cerrado en $X$.
+    
+    Dado que siempre se cumple que $f(A) \subset \overline{f(A)}$, aplicando la antiimagen tenemos:
+    \[
+        A \subset f^{-1}(f(A)) \subset f^{-1}(\overline{f(A)})
+    \]
+    Así, $f^{-1}(\overline{f(A)})$ es un conjunto cerrado que contiene a $A$.
+    
+    Como la clausura $\overline{A}$ es la intersección de todos los cerrados que contienen a $A$ (es decir, el menor cerrado que contiene a $A$), se deduce necesariamente que:
+    \[
+        \overline{A} \subset f^{-1}(\overline{f(A)})
+    \]
+    Aplicando la función $f$ a ambos lados y usando la propiedad de que $f(f^{-1}(C)) \subset C$, obtenemos:
+    \[
+        f(\overline{A}) \subset f\left(f^{-1}(\overline{f(A)})\right) \subset \overline{f(A)}
+    \]
+    como queríamos probar.
+
+    \medskip
+
+    $\Leftarrow)$ Supongamos ahora que $f(\overline{A}) \subset \overline{f(A)}$ se cumple para todo $A \subset X$. Queremos ver que $f$ es continua, lo cual equivale a probar que la antiimagen de cualquier cerrado es un cerrado.
+    
+    Sea $C \subset Y$ un cerrado cualquiera. Tomamos $A = f^{-1}(C)$ y aplicamos la hipótesis:
+    \[
+        f(\overline{f^{-1}(C)}) \subset \overline{f(f^{-1}(C))}
+    \]
+    Como $f(f^{-1}(C)) \subset C$, aplicando la clausura a ambos lados tenemos que $\overline{f(f^{-1}(C))} \subset \overline{C}$. Y al ser $C$ un conjunto cerrado, $\overline{C} = C$. Por tanto:
+    \[
+        f(\overline{f^{-1}(C)}) \subset C
+    \]
+    Aplicando la antiimagen $f^{-1}$ en ambos lados de la inclusión:
+    \[
+        \overline{f^{-1}(C)} \subset f^{-1}\left(f(\overline{f^{-1}(C)})\right) \subset f^{-1}(C)
+    \]
+    Por otro lado, por definición de clausura siempre se cumple que $f^{-1}(C) \subset \overline{f^{-1}(C)}$.
+    
+    Al tener ambas inclusiones, concluimos que $f^{-1}(C) = \overline{f^{-1}(C)}$, lo que demuestra que $f^{-1}(C)$ es cerrado en $X$ y, por lo tanto, $f$ es continua.
+\end{sol}
+        \item[d)] $f$ es abierta si y solo si $\left(f^{-1}(B)\right)^{\circ} \subset f^{-1} (B^{\circ})$ para todo $B\subset Y$. 
+        \item[e)] $f$ es cerrada si y solo si $\overline{f(A)}\subset f (\overline{A}) $ para todo $A \subset X$.
+        \begin{sol}
+    $\Rightarrow)$ Supongamos que $f$ es una aplicación cerrada y sea $A \subset X$ un subconjunto cualquiera.
+    
+    Por definición de clausura, $\overline{A}$ es un conjunto cerrado en $X$. Dado que $f$ es cerrada, la imagen de cualquier cerrado es cerrada en $Y$, por lo que $f(\overline{A})$ es un conjunto cerrado en $Y$.
+    
+    Además, como $A \subset \overline{A}$, aplicando la función tenemos que $f(A) \subset f(\overline{A})$.
+    
+    Por definición, la clausura $\overline{f(A)}$ es la intersección de todos los conjuntos cerrados que contienen a $f(A)$ (es decir, el menor cerrado que contiene a $f(A)$). Como $f(\overline{A})$ es uno de esos conjuntos cerrados que contienen a $f(A)$, se deduce inmediatamente que:
+    \[
+        \overline{f(A)} \subset f(\overline{A})
+    \]
+    como queríamos probar.
+
+    \medskip
+
+    $\Leftarrow)$ Supongamos ahora que $\overline{f(A)} \subset f(\overline{A})$ para todo $A \subset X$. Queremos demostrar que $f$ es una aplicación cerrada, es decir, que si $C \subset X$ es un cerrado, entonces $f(C)$ es un cerrado en $Y$.
+    
+    Sea $C \subset X$ un conjunto cerrado, por lo que $C = \overline{C}$. Aplicando la hipótesis al conjunto $C$, obtenemos:
+    \[
+        \overline{f(C)} \subset f(\overline{C}) = f(C)
+    \]
+    Por otra parte, por definición de clausura siempre se verifica la inclusión recíproca $f(C) \subset \overline{f(C)}$.
+    
+    Teniendo ambas inclusiones, concluimos que:
+    \[
+        f(C) = \overline{f(C)}
+    \]
+    lo cual demuestra que $f(C)$ coincide con su clausura y, por ende, es cerrado en $Y$. Por lo tanto, $f$ es una aplicación cerrada.
+\end{sol}
+    \end{itemize}
+\end{ejer}
+\section{Seminario 6}
+\begin{ejer}
+    [93] Sea $f: X \longrightarrow Y$ una aplicación biyectiva. Prueba que las siguientes condiciones son equivalentes:
+    \begin{enumerate}[a)]
+        \item $f$ es homeomorfismo.
+        \item $f$ es continua y abierta.
+        \item $f$ es continua y cerrada.
+    \end{enumerate}
+\end{ejer}
+\begin{sol}
+    Demostraremos las equivalencias $a) \iff b)$ y $a) \iff c)$:
+
+    \begin{itemize}
+        \item $a) \iff b)$: Por definición, $f$ es un homeomorfismo $\iff f$ es biyectiva, continua y $f^{-1}: Y \longrightarrow X$ es continua. Como $f$ es biyectiva, para cualquier abierto $U \subseteq X$ la antiimagen por $f^{-1}$ coincide con la imagen directa por $f$:
+        $$
+            (f^{-1})^{-1}(U) = f(U).
+        $$
+        Por tanto, $f^{-1}$ es continua $\iff$ la antiimagen de todo abierto $U \subseteq X$ por $f^{-1}$ es abierta en $Y \iff f(U)$ es abierto en $Y$ para todo abierto $U \subseteq X \iff f$ es abierta.
+
+        \item $a) \iff c)$: De forma análoga a la caracterización por abiertos, $f^{-1}: Y \longrightarrow X$ es continua $\iff$ la antiimagen de todo cerrado $C \subseteq X$ por $f^{-1}$ es cerrada en $Y$. Como $(f^{-1})^{-1}(C) = f(C)$, esto es equivalente a que $f(C)$ sea cerrado en $Y$ para todo cerrado $C \subseteq X \iff f$ es cerrada.
+
+        \textit{Demostración alternativa directa $b) \iff c)$ usando biyectividad:}
+        
+        Dado que $f$ es biyectiva, para todo subconjunto $A \subseteq X$ se satisface la identidad $f(X - A) = Y - f(A)$.
+        \begin{itemize}
+            \item[$b) \Rightarrow c)$:] Si $f$ es abierta y $C \subseteq X$ es cerrado, entonces $U = X - C$ es abierto. Su imagen $f(U) = f(X - C) = Y - f(C)$ es abierta en $Y$, luego su complementario $f(C)$ es cerrado en $Y$. Por tanto, $f$ es cerrada.
+            \item[$c) \Rightarrow b)$:] Si $f$ es cerrada y $U \subseteq X$ es abierto, entonces $C = X - U$ es cerrado. Su imagen $f(C) = f(X - U) = Y - f(U)$ es cerrada en $Y$, luego su complementario $f(U)$ es abierto en $Y$. Por tanto, $f$ es abierta.
+        \end{itemize}
+    \end{itemize}
+\end{sol}
+\section{Seminario 6}
+\begin{ejer}
+    [95] Sea $f : (X, \mathcal{T}_1) \to (Y, \mathcal{T}_2)$ una aplicación y considera $\mathcal{T}_f \subset \mathcal{P}(X)$ la topología inicial de $f$ y $\mathcal{T}_f^* \subset \mathcal{P}(Y)$ la topología final de $f$. Demuestra que:
+    \begin{enumerate}[a)]
+        \item $C_1 \subset X$ es cerrado en $\mathcal{T}_f$ si y solo si $C_1 = f^{-1}(C_2)$, donde $C_2$ es cerrado en $\mathcal{T}_2$.
+        \item $C_2 \subset Y$ es cerrado en $\mathcal{T}_f^*$ si y solo si $f^{-1}(C_2)$ es cerrado en $\mathcal{T}_1$.
+    \end{enumerate}
+\end{ejer}
+\begin{sol}
+    \begin{enumerate}[a)]
+        \item Por definición, los abiertos de la topología inicial $\mathcal{T}_f$ en $X$ son las antiimágenes de los abiertos de $(Y, \mathcal{T}_2)$:
+        \[
+            U_1 \in \mathcal{T}_f \iff \exists \, U_2 \in \mathcal{T}_2 \text{ tal que } U_1 = f^{-1}(U_2).
+        \]
+        
+        Demostremos la equivalencia pasando al complementario:
+        
+        \begin{itemize}
+            \item [$(\Rightarrow)$] Sea $C_1 \subset X$ un cerrado en $\mathcal{T}_f$. Por definición de cerrado, su complementario $X - C_1$ es un abierto en $\mathcal{T}_f$. Por tanto, existe un abierto $U_2 \in \mathcal{T}_2$ tal que:
+            \[
+                X - C_1 = f^{-1}(U_2).
+            \]
+            Tomando $C_2 = Y - U_2$, que es por definición un cerrado en $\mathcal{T}_2$, se satisface que:
+            \[
+                f^{-1}(C_2) = f^{-1}(Y - U_2) = X - f^{-1}(U_2) = X - (X - C_1) = C_1.
+            \]
+
+            \item [$(\Leftarrow)$] Supongamos que $C_1 = f^{-1}(C_2)$ con $C_2$ un cerrado en $(Y, \mathcal{T}_2)$. Entonces $U_2 = Y - C_2$ es abierto en $\mathcal{T}_2$. Tomando la antiimagen:
+            \[
+                X - C_1 = X - f^{-1}(C_2) = f^{-1}(Y - C_2) = f^{-1}(U_2).
+            \]
+            Como $f^{-1}(U_2)$ es un abierto en $\mathcal{T}_f$ por definición de la topología inicial, su complementario $C_1$ es cerrado en $\mathcal{T}_f$.
+        \end{itemize}
+
+        \item Por definición, un subconjunto $V \subset Y$ es un abierto en la topología final $\mathcal{T}_f^*$ si y solo si su antiimagen $f^{-1}(V)$ es un abierto en $(X, \mathcal{T}_1)$.
+        
+        Un subconjunto $C_2 \subset Y$ es cerrado en $\mathcal{T}_f^*$ si y solo si su complementario $Y - C_2$ es abierto en $\mathcal{T}_f^*$. Por la definición de la topología final, esto equivale a que:
+        \[
+            f^{-1}(Y - C_2) \text{ sea abierto en } \mathcal{T}_1.
+        \]
+        Usando la propiedad de la antiimagen de los complementarios, $f^{-1}(Y - C_2) = X - f^{-1}(C_2)$, tenemos que:
+        \[
+            X - f^{-1}(C_2) \text{ es abierto en } \mathcal{T}_1 \iff f^{-1}(C_2) \text{ es cerrado en } \mathcal{T}_1.
+        \]
+        Concluimos que $C_2$ es cerrado en $\mathcal{T}_f^*$ si y solo si $f^{-1}(C_2)$ es cerrado en $\mathcal{T}_1$.
+    \end{enumerate}
+\end{sol}
+\begin{ejer}
+    [97] Sea $f: (X, \mc T_X) \longrightarrow (Y, \mc T_Y)$ una aplicación biyectiva. Pruébese que las siguientes afirmaciones son equivalentes:
+    \begin{enumerate}[a)]
+        \item $f$ es un homeomorfismo.
+        \item La topología de $Y$ es la topología final de la aplicación $f$.
+        \item La topología de $X$ es la topología inicial de la aplicación $f$.
+    \end{enumerate}
+\end{ejer}
+\begin{sol} \,
+    \begin{itemize}
+        \item [$a) \iff b)$] 
+        \begin{itemize}
+            \item [$(\Rightarrow)$] Supongamos que $f$ es un homeomorfismo. Por ser $f$ continua, la antiimagen de todo abierto de $\mathcal{T}_Y$ está en $\mathcal{T}_X$, luego $\mathcal{T}_Y \subseteq \mathcal{T}^f$. Recíprocamente, si $V \in \mathcal{T}^f$, por definición $f^{-1}(V) \in \mathcal{T}_X$. Dado que $f$ es biyectiva y $f^{-1}$ es continua, la imagen directa por $f$ preserva abiertos (es decir, $f$ es una aplicación abierta). Por tanto, $V = f(f^{-1}(V)) \in \mathcal{T}_Y$, luego $\mathcal{T}^f \subseteq \mathcal{T}_Y$. Concluimos que $\mathcal{T}_Y = \mathcal{T}^f$.
+
+            \item [$(\Leftarrow)$] Supongamos que $\mathcal{T}_Y = \mathcal{T}^f$. Dado que la topología final es siempre la más fina que hace a $f$ continua, $f$ es continua. Para ver que $f^{-1}$ es continua (lo cual equivale a que $f$ sea abierta por ser biyectiva), sea $U \in \mathcal{T}_X$ un abierto cualquiera. Como $f$ es biyectiva, se satisface que $f^{-1}(f(U)) = U \in \mathcal{T}_X$. Por definición de la topología final $\mathcal{T}^f = \mathcal{T}_Y$, esto implica que $f(U) \in \mathcal{T}_Y$, por lo que $f$ es abierta. Al ser $f$ biyectiva, continua y abierta, es un homeomorfismo.
+        \end{itemize}
+
+        \item [$a) \iff c)$] 
+        \begin{itemize}
+            \item [$(\Rightarrow)$] Supongamos que $f$ es un homeomorfismo. Si $U \in \mathcal{T}_X$, como $f$ es un homeomorfismo, $f(U) \in \mathcal{T}_Y$. Al ser $f$ biyectiva, $U = f^{-1}(f(U))$, por lo que $U \in \mathcal{T}_f$. De donde $\mathcal{T}_X \subseteq \mathcal{T}_f$. La inclusión recíproca $\mathcal{T}_f \subseteq \mathcal{T}_X$ es inmediata por la continuidad de $f$. Por tanto, $\mathcal{T}_X = \mathcal{T}_f$.
+
+            \item [$(\Leftarrow)$] Supongamos que $\mathcal{T}_X = \mathcal{T}_f$. Por ser $\mathcal{T}_X$ la topología inicial, $f$ es continua. Para verificar que $f$ es abierta (lo que implica que $f^{-1}$ es continua), tomemos un abierto $U \in \mathcal{T}_X = \mathcal{T}_f$. Por definición de $\mathcal{T}_f$, existe un abierto $V \in \mathcal{T}_Y$ tal que $U = f^{-1}(V)$. Aplicando la imagen directa y usando la epiyectividad de $f$
+            \[
+                f(U) = f(f^{-1}(V)) = V \in \mathcal{T}_Y.
+            \]
+            Así, $f(U)$ es abierto en $Y$, luego $f$ es abierta. Al ser biyectiva, continua y abierta, $f$ es un homeomorfismo.
+        \end{itemize}    
+        \item [$b) \iff c)$] 
+            \begin{itemize} 
+            \item [$(\Rightarrow)$] Supongamos que $\mathcal{T}_Y = \mathcal{T}^f$, es decir, que para todo subconjunto $V \subseteq Y$:
+        \[
+            V \in \mathcal{T}_Y \iff f^{-1}(V) \in \mathcal{T}_X.
+        \]
+        Queremos probar que $\mathcal{T}_X = \mathcal{T}_f$.
+        \begin{itemize}
+            \item $(\subseteq)$ Sea $U \in \mathcal{T}_X$. Dado que $f$ es epiyectiva, se satisface $U = f^{-1}(f(U))$. Como $f^{-1}(f(U)) \in \mathcal{T}_X$, por la hipótesis sobre la topología final tenemos que $V = f(U) \in \mathcal{T}_Y$. Así, $U$ se puede escribir como la antiimagen del abierto $V \in \mathcal{T}_Y$, lo que por definición implica que $U \in \mathcal{T}_f$.
+            \item $(\supseteq)$ Sea $U \in \mathcal{T}_f$. Por definición de la topología inicial, existe un abierto $V \in \mathcal{T}_Y$ tal que $U = f^{-1}(V)$. Por la hipótesis de la topología final $\mathcal{T}_Y = \mathcal{T}^f$, al ser $V \in \mathcal{T}_Y$ su antiimagen $f^{-1}(V)$ pertenece a $\mathcal{T}_X$, de donde $U \in \mathcal{T}_X$.
+        \end{itemize}
+        Por tanto, $\mathcal{T}_X = \mathcal{T}_f$.
+
+        \item [$(\Leftarrow)$] Supongamos que $\mathcal{T}_X = \mathcal{T}_f$, es decir, que para todo subconjunto $U \subseteq X$:
+        \[
+            U \in \mathcal{T}_X \iff \exists V \in \mathcal{T}_Y \text{ tal que } U = f^{-1}(V).
+        \]
+        Como $f$ es inyectiva y epiyectiva, para cualquier abierto $V \in \mathcal{T}_Y$ el conjunto $V$ queda unívocamente determinado por su antiimagen como $V = f(f^{-1}(V))$.
+        
+        Queremos probar que $\mathcal{T}_Y = \mathcal{T}^f$.
+        \begin{itemize}
+            \item $(\subseteq)$ Sea $V \in \mathcal{T}_Y$. Por definición de la topología inicial, su antiimagen $f^{-1}(V)$ pertenece a $\mathcal{T}_f = \mathcal{T}_X$. Dado que $f^{-1}(V) \in \mathcal{T}_X$, por definición de la topología final se cumple que $V \in \mathcal{T}^f$.
+            \item $(\supseteq)$ Sea $V \in \mathcal{T}^f$. Por definición de la topología final, su antiimagen $U = f^{-1}(V)$ pertenece a $\mathcal{T}_X$. Como $\mathcal{T}_X = \mathcal{T}_f$, existe un abierto $W \in \mathcal{T}_Y$ tal que $f^{-1}(V) = f^{-1}(W)$. Aplicando la imagen directa y usando la biyectividad de $f$:
+            \[
+                V = f(f^{-1}(V)) = f(f^{-1}(W)) = W.
+            \]
+            Dado que $W \in \mathcal{T}_Y$, concluimos que $V \in \mathcal{T}_Y$.
+        \end{itemize}
+        Por tanto, $\mathcal{T}_Y = \mathcal{T}^f$.
+                \end{itemize}
+        \end{itemize}
+\end{sol}
+\begin{ejer}
+    [98] Sea $X$ un espacio topológico. Demostrar que $X$ es $T_2$ si y solo si la diagonal $\Delta_X := {(x,x): x \in X} \subset X\times X$ es un cerrado. Deducir que $X$ es $T_2$ si y solo si el morfismo diagonal $\delta_X: X \longrightarrow X \times X$ definido por $\delta(x) = (x, x)$ es una inmersión cerrada.
+\end{ejer}
+\begin{ejer}
+    [99] Probar que una aplicación $f : X \to Y$ es continua si y solo si la aplicación gráfica $\Gamma_f : X \to X \times Y$ dada por $\Gamma_f(x) = (x, f(x))$ es continua. Deducir que si $f$ es continua, la aplicación $\Gamma_f$ es una inmersión. Además, si $Y$ es separado, entonces la aplicación $\Gamma_f$ es una inmersión cerrada (usar el 98).
+\end{ejer}
+\begin{sol}
+    Consideramos $\pi_X, \pi_Y$ las proyecciones, $\Gamma_f$ es continua $\iff$ $\Gamma_f \circ \pi_X = \Id$ y $\Gamma_f \circ \pi_Y = f$ son continuas, por la propiedad universal. $\Id$ es continua, y por tanto $\Gamma_f$ es continua $\iff \, f$ es continua.
+    
+    $\Gamma_f$ continua e inyectiva es inmersi\'on $\iff \, X $ tiene la topolog\'ia inical. TERMINAR.  
+\end{sol}
+\begin{ejer}
+    [100] Sea $Y$ un espacio topológico $T_2$ y $f : X \to Y$, $g : X \to Y$ dos aplicaciones continuas. Prueba que:
+    \begin{enumerate}[a)]
+        \item El conjunto de puntos $\{x \in X \mid f(x) = g(x)\}$ es un cerrado de $X$.
+        \item Si $f$ y $g$ coinciden en un subespacio denso de $X$, entonces $f$ y $g$ son iguales.
+        \item Sea $f : \mathbb{R} \to \mathbb{R}$ continua de modo que $f(q) = 0$ para todo $q \in \mathbb{Q}$. Demuestra que $f(x) = 0$ para todo $x \in \mathbb{R}$.
+    \end{enumerate}
+\end{ejer}

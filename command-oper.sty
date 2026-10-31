@@ -1,0 +1,159 @@
+
+\ProvidesPackage{command-oper} %creamos un paquete "command-oper"
+
+% OPERADORES ---------------------------------------------------------
+    %\DeclareMathOperator{\oper}{oper} %operador
+    %\DeclareMathOperator*{\oper}{oper} %operador que acepta limites
+% Algebra
+\DeclareMathOperator{\Aut}{Aut}         %automorfismos
+\DeclareMathOperator{\End}{End}         %endomorfismos
+\DeclareMathOperator{\coker}{coker}     %conucleo
+\DeclareMathOperator{\gr}{gr}           %grado
+\DeclareMathOperator{\Hom}{Hom}         %homomorfismos
+\DeclareMathOperator{\Id}{Id}           %identidad
+\DeclareMathOperator{\khar}{char}       %caracteristica
+\DeclareMathOperator{\krull}{dim_{krull}} %dimension de Krull
+\DeclareMathOperator{\Long}{long}       %longitud
+\DeclareMathOperator{\longA}{long_{$A$}}%longitud sobre A
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\proj}{Proj}       %projective
+\DeclareMathOperator{\Rad}{Rad}         %radical, metricas
+\DeclareMathOperator{\rad}{rad}         %radical, algebra
+\DeclareMathOperator{\rang}{rang}
+\DeclareMathOperator{\rg}{rg}         %rango
+\DeclareMathOperator{\Sing}{Sing}       %singularidades
+\DeclareMathOperator{\Spec}{Spec}       %espectro
+    %Operadores con caracteristicas especiales
+    \newcommand{\im}[1]{\operatorname{Im}\left(#1\right)} %imagen con (_), ya existe \Im
+    \newcommand{\Part}[1]{\operatorname{Part}\left(#1\right)} %partes conjuntos
+    \newcommand{\ext}[1]{\textrm{\textup{ext}}\left(#1\right)} %exterior
+    \newcommand{\vol}[1]{\textrm{\textup{vol}}\left(#1\right)} %volumen
+% Trigonometria hiperbolica
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arcsch}{arcsch}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcoth}{arcoth}
+\DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it}
+
+
+% COMANDOS -----------------------------------------------------------
+    %\newcommand{\cmd}{\operatorname{cmd}}                     %same as: \DeclareMathOperator{\cmd}{cmd}
+    %\newcommand{\cmd}[1]{\operatorname{cmd}#1}                 %same as: \DeclareMathOperator{\cmd}{cmd}
+    %\newcommand{\cmd}[1]{\operatorname{cmd}\,#1}               %operador con espacio antes del objeto
+    %\newcommand{\cmd}[1]{\operatorname{cmd}\left(#1\right)}    %operador con parentesis adaptivos (_)
+    %\newcommand{\cmd}[1]{\operatorname{cmd}_{#1}}              %operatodor que acepta subindice
+
+% Font
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\fk}[1]{\mathfrak{#1}}
+
+% Math
+\newcommand{\Grd}[1]{\operatorname{grado}\,#1} %grado por extendido y con espacio
+\newcommand{\prdesc}[2]{\left\langle {#1},{#2} \right\rangle} %prod. escalar parentesis adaptivos
+\newcommand{\pd}[3][]{\dfrac{\partial^{#1} #2}{\partial #3}} %parcial
+\newcommand{\cte}{\textsc{c}\textrm{te}} %constante
+\newcommand{\campos}[1]{\mathfrak{X}\left(#1\right)} %campos, geodif
+\newcommand{\Pkn}{\mathbb{P}_k^n}
+\newcommand{\modulo}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}} %modulos, cocientes
+\newcommand{\defeq}{\overset{\mathclap{\text{def}}}{=}} %\mathclap para tener mismo kerning
+\newcommand{\noteq}{\overset{\mathclap{\text{not}}}{=}}
+\newcommand{\hipeq}{\overset{\mathclap{\text{hip}}}{=}}
+\newcommand{\isom}{\xrightarrow{
+   \,\smash{\raisebox{-0.6ex}{\ensuremath{\scriptstyle\sim}}}\,}} %isom. corto
+\newcommand{\Isom}{\xlongrightarrow{
+   \smash{\raisebox{-0.6ex}{\ensuremath{\scriptstyle\sim}}}}} %isom. largo
+\newcommand{\nin}{\notin}
+
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\q}{\mathfrak{q}}
+\newcommand{\m}{\mathfrak{m}}
+\newcommand{\kk}{\Bbbk}
+
+\newcommand{\bdot}{\boldsymbol{\cdot}}
+\newcommand{\bbdot}{\raisebox{-0.25ex}{\scalebox{0.5}{$\bullet$}}}
+
+
+%Geometría
+%\newcommand{\Line}{\overleftrightarrow} %recta
+\newcommand{\Segment}{\overline} %segmento
+\newcommand{\rRay}{\overrightarrow} %vector/semirecta
+\newcommand{\lRay}{\overleftarrow} %semirecta
+\newcommand{\Arc}{\overgroup} %arco
+\newcommand{\Circle}{\mathord{\odot}} %circulo
+\newcommand{\Pot}[2]{\textrm{Pot}_{#1}\left({#2}\right)} %potencia de un pto
+
+% Otros comandos
+\newcommand{\bt}{\begin{tikzcd}}
+\newcommand{\et}{\end{tikzcd}}
+\newcommand{\rarmaps}{\arrow[mapsto]{r}}
+\newcommand{\xdownarrow}[1]{% down arrow elongate
+  {\left\downarrow\vbox to #1{}\right.\kern-\nulldelimiterspace}
+}
+\newcommand{\xuparrow}[1]{% up arrow elongate
+  {\left\uparrow\vbox to #1{}\right.\kern-\nulldelimiterspace}
+}
+\newcommand{\dboxed}[1]{\dbox{\ensuremath{#1}}} %dashed math box
+\newcommand*{\circled}[1]{% circled object
+    \tikz[baseline=(char.base)]{%
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};%
+    }
+}
+\newcommand{\diag}{\diagbox[dir=SW]{\,}{\,}} %diagonal en tablas
+\newcommand\correct{%
+  \tikz\node[circle,fill=green!50,inner sep=0pt,minimum size=2.5ex]%
+  {$\checkmark$};\ %
+}
+\newcommand\regular{%
+  \tikz\node[circle,fill=orange!40!yellow!80,inner sep=0pt,minimum size=2.5ex]%
+  {$\approx$};\ %
+}
+\newcommand\incorrect{%
+  \tikz\node[circle,fill=red!50,inner sep=0pt,minimum size=2.5ex]%
+  {$\times$};\ %
+}
+\newcommand{\retic}[2]{$$% isom. de reticulos A=B
+    \left\{\:\text{#1}\:\right\}
+    \overset{\sim}{\longleftrightarrow}
+    \left\{\:\text{#2}\:\right\}
+$$}
+\newcommand{\reticc}[3]{$$% isom. de reticulos A=B=C
+    \left\{\:\text{#1}\:\right\}
+    \overset{\sim}{\longleftrightarrow}
+    \left\{\:\text{#2}\:\right\}
+    \overset{\sim}{\longleftrightarrow}
+    \left\{\:\text{#3}\:\right\}
+$$}
+\newcommand\upmapstoo{\rotatebox[origin=c]{90}{$\mapsto$}}
+\newcommand\downmapstoo{\rotatebox[origin=c]{-90}{$\mapsto$}}
+
+
+% Importados del paquete MnSymbol
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+  <-6> MnSymbolA5
+  <6-7> MnSymbolA6
+  <7-8> MnSymbolA7
+  <8-9> MnSymbolA8
+  <9-10> MnSymbolA9
+  <10-12> MnSymbolA10
+  <12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolA-Bold6
+  <7-8> MnSymbolA-Bold7
+  <8-9> MnSymbolA-Bold8
+  <9-10> MnSymbolA-Bold9
+  <10-12> MnSymbolA-Bold10
+  <12-> MnSymbolA-Bold12}{}
+
+
+
+
+% ENTORNOS -----------------------------------------------------------
+\newcommand{\contrejem}[1]{%
+            $\longrightarrow$ Contraejemplo:\\ \textit{\phantom{.}\qquad\begin{minipage}[t]{0.9\linewidth}#1\end{minipage}}} %contraejemplo

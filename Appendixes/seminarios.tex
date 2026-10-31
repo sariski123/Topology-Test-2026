@@ -1,0 +1,88 @@
+
+\chapter{Seminarios}
+\section{6 de octubre}
+\subsection{Hoja 2}
+\begin{ejer}
+[17] En cada uno de los casos siguientes encontrar una ecuaci\'on de la recta del plano proyectivo complejo $\mathbb P^2 (\mathbb C)$ que pasa por los dos puntos dados:
+    
+    b) $(1:1:i),\, (i:1:1)$
+\end{ejer}
+\begin{sol}
+    Como subespacio vectorial es 
+    $$<(1:1:i),\, (i:1:1)> \equiv \begin{cases}
+        x_o=\lambda+\mu i \\ x_1 = \lambda + \mu \\ x_2=\lambda i+\mu
+    \end{cases}$$ y la ecuaci\'on impl\'icita
+    $$\begin{vmatrix}
+        x_o & x_1 & x_2 \\ 1 & 1 & i \\ i & 1 & 1
+    \end{vmatrix} = 0 \iff (1-i) x_o -2x_1 + (1-i) x_2 = 0$$
+\end{sol}
+\begin{ejer}
+    [23] En $\mathbb P^2$ sean las rectas 
+    $$r_1 \equiv x + y + z = 0 \quad  \text{y} \quad r_2 \equiv x - y + 2z = 0$$ 
+    Dar la ecuaci\'on del haz de rectas al que pertenecen dichas rectas y la subvariedad base de dicho haz.
+\end{ejer}
+\begin{sol}
+    Se tiene que la ecuaci\'on del haz de rectas es una combinaci\'on lineal de ellas, es decir, 
+    $$\lambda_1 r_1 +\lambda_2 r_2 = \lambda_1(x + y + z)+\lambda_2(x - y +2 z)=((\lambda_1+\lambda_2)x+(\lambda_1-\lambda_2)y+(\lambda_1+2\lambda_2)z)=0$$
+    y la base es el punto en el que se cortan dichas rectas, que ser\'a 
+    $$r_1\cap r_2 = \begin{cases}
+        x + y + z = 0 \\ x - y + 2z = 0
+    \end{cases} \iff \begin{vmatrix}
+        \, x_o & x_1 & x_2 \,\, \\ 1 & 1 & 1 \\ 1 & -1 & 2
+    \end{vmatrix} = 2x_o+x_1-x_2-x_2-2x_1+x_o=$$
+    $$=3x_o-x_1-2x_2=(3:-1:-2)$$
+\end{sol}
+\begin{ejer}
+    [24] Dados los planos 
+    $$\pi_1 \equiv x - y + z + t = 0 \quad \text{y} \quad \pi_2 \equiv 2x - y - z - t = 0$$ 
+    Decidir si $\pi_1$ y $\pi_2$ forman parte de alguna radiaci\'on en $\mathbb P^3$. En caso afirmativo calcular la subvariedad base de dicha radiaci\'on y dar la ecuaci\'on de la radiaci\'on.
+\end{ejer}
+\begin{sol}
+    Para que formen una radiaci\'on basta con que se corten, es decir, que no sean paralelos. Dado que sus vectores directores $(1,-1,1,1)$ y $(2,-1,-1,-1)$ no son proporcionales, no son paralelos.
+
+    La subvariedad base ser\'a su intersecci\'on, una recta
+    $$\pi_1 \cap \pi_2=\begin{cases}
+         x - y + z + t = 0 \\ 2x - y - z - t = 0
+    \end{cases}\equiv \begin{vmatrix}
+        x_o & x_1 & x_2 & x_3 \\ 1 & -1 & 1 & 1 \\ 2 & -1 & -1 & -1
+    \end{vmatrix} = $$
+    $$=\begin{cases}
+        x=2x_o+3x_1+3x_2 \\ y=3x_2-3x_3 \\ z=2x_o+3x_1+x_3 \\ t=2x_2
+    \end{cases}\iff \mathbb P(<(3,6,0,2),(2,0,2,0)>)$$
+
+    Igual que en el ejercicio anterior, el haz de planos es una combincai\'on lineal de ellos 
+    $$\lambda(x - y + z + t)+\mu( 2x - y - z - t) =0$$
+    
+\end{sol}
+\subsection{Hoja 3}
+\begin{ejer}
+    [6] Sean $a_o, a_1, a_2$ y $a_3$ cuatro puntos distintos del plano  proyectivo real $\mathbb P^2$ tales que la variedad proyectiva $a_o + a_1 + a_2$ no pasa por $a_3$. Demostrar que existe una proyectividad de $\mathbb P^2$ que transforma los puntos $a_o, a_1, a_2$ y $a_3$ en los puntos $a_1, a_2, a_o$ y $a_3$, respectivamente. ¿Es \'unica esa proyectividad?
+\end{ejer}
+\begin{sol}Tiene truco los puntos están alineados.
+
+Se tiene que $dim \, a_o+a_1+a_2=dim \, \mathbb P(<e_o+e_1+e_2>) =dim \, \mathbb P(E_3)= 2$ si y solo si $<e_o> \cap <e_1> \cap <e_2> \neq \emptyset$, pero $dim\, \mathbb P^2 =2$, luego en ese caso generar\'ian todo el espacio. Pero $a_3\nin a_o+a_1+a_2$, luego no generan todo el espacio, es decir, $dim \, a_o+a_1+a_2 = 1$, por tanto, est\'an alineados.  
+
+Ahora bien, la proyectividad dada convierte los 3 primeros en los 3 primeros con diferente orden, es decir, manda la recta a la recta, y $a_3$ a $a_3$. Hay infinitas proyecciones que mandan la recta a la recta, dependiendo de escalares, por lo que no es \'unica.
+\end{sol}
+\begin{ejer}
+    [11] Determinar las ecuaciones de la proyecci\'on de $\mathbb P^3$ sobre el plano $\pi$ de ecuaci\'on $x_o + x_1 + x_2 + x_3 = 0$, de centro $Z = (1, 0, 1, 0)$. Determinar tambi\'en las ecuaciones de la imagen inversa del punto $p =(1, 1, -1, -1)$ y del hiperplano $H \equiv x_o + x_1 = 0$. 
+\end{ejer}
+\begin{sol}
+    Lo primero, $Z \nin \pi= x_o + x_1 + x_2 + x_3$. Las ecuaciones de la proyecci\'on ser\'an las ecuaciones del haz de subvariedades que pasan por $Z$ y cortan a $\pi$. Estas subvariedades son rectas $Z+\pi$ y verifican que 
+    $$Z+\pi=(1,0,1,0)+\lambda( x_o + x_1 + x_2 + x_3)=\{x_0=x_2=1\}$$
+    lo cual es una recta (proyectando).
+
+    Para calcular las inversas, es decir, desproyectar por la proyecci\'on, unimos con el v\'ertice $Z$
+    $$\pi^{-1}(p)=p+Z = (1,1,-1,-1)+(1,0,1,0)=\{x_o=1, x_1+x_2+x_3=-1=-x_o\}$$
+    Al ser $H$ un plano no podemos hacer su inversa. Pero la podemos hacer de la intersecci\'on con $\pi$. Esta es
+    $$H \cap \pi =\begin{cases}
+        x_o + x_1 + x_2 + x_3=0 \\ x_o + x_1=0        
+    \end{cases} \iff \{
+       x_o+x_1=x_2+x_3=0\}$$
+       Y ahora su antiimagen ser\'a un plano
+    $$\pi^{-1}(H \cap \pi)=Z+(H \cap \pi) = (1,0,1,0)+ \{
+       x_o+x_1=x_2+x_3=0\}=$$
+       $$(1,0,1,0)+(1,-1,0,0)+(0,0,1,-1)\equiv\begin{vmatrix}
+           x_o & x_1 & x_2 & x_3 \\ 1 & 0 & 1 & 0 \\ 1 & -1 & 0 & 0 \\ 0 & 0 & 1 & -1
+       \end{vmatrix}=\{-x_o+x_1+x_2-x_3=0\}$$
+\end{sol}

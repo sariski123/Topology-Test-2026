@@ -1,0 +1,267 @@
+\chapter{Ex\'amenes} 
+
+% ==============================================================================
+% 14 DE ENERO DE 2026
+% ==============================================================================
+\section{14 de enero de 2026}
+
+\subsection{Teoría}
+
+\begin{enumerate}
+    \item Demostrar que si un espacio topológico es conexo y localmente arcoconexo, entonces es arcoconexo. (Demostrar los resultados sobre espacios conexos y arcoconexos que se utilicen).
+    \hfill \textbf{(2.5 puntos)}
+
+    \item Si $X$ es un espacio topológico e $Y$ un subespacio, ¿es cierto que los puntos del borde de $Y$ son los puntos del cierre de $Y$ que no pertenecen al interior de $Y$? Razónese la respuesta, en caso afirmativo, demuéstrese y en caso negativo, modificar el enunciado para caracterizar los puntos del borde, demostrándolo.
+    \hfill \textbf{(1 punto)}
+
+    \item Si $X$ es un espacio topológico, ¿es cierto que si $X$ es compacto por límites entonces es compacto por sucesiones? Razónese la respuesta, en caso afirmativo, demuéstrese y en caso negativo, añadir las hipótesis necesarias al enunciado anterior para que sea cierto, demostrándolo.
+    \hfill \textbf{(1.5 puntos)}
+\end{enumerate}
+
+\subsection{Problemas}
+
+\begin{enumerate}
+    \item Sean $(X, d)$ y $(X', d')$ espacios seudométricos y $\mathcal{T}_d$, $\mathcal{T}_{d'}$ las topologías asociadas a las seudométricas. Sea $f : X \to X'$ una isometría. Demostrar que:
+    \begin{enumerate}
+        \item La topología $\mathcal{T}_d$ coincide con la topología inicial de la aplicación $f : X \to (X', \mathcal{T}_{d'})$.
+        \hfill \textbf{(0.5 puntos)}
+        
+        \item Si $f$ es epiyectiva, entonces la topología $\mathcal{T}_{d'}$ coincide con la topología final de la aplicación $f : (X, \mathcal{T}_d) \to X'$. ¿Es cierto el enunciado anterior si $f$ no es epiyectiva?
+        \hfill \textbf{(1 punto)}
+    \end{enumerate}
+
+    \item Sean $X, Y$ espacios topológicos conexos y $Z$ otro espacio topológico. Sea $f : X \times Y \to Z$ una aplicación de conjuntos, tal que para cada $x_0 \in X$ y para cada $y_0 \in Y$, las aplicaciones
+    \[
+        f_{x_0} : Y \to Z, \quad y \mapsto f(x_0, y)
+    \]
+    \[
+        f_{y_0} : X \to Z, \quad x \mapsto f(x, y_0)
+    \]
+    son aplicaciones continuas. Demostrar que $\operatorname{Im} f = f(X \times Y) \subset Z$ es un subespacio conexo.
+    \hfill \textbf{(1.5 puntos)}
+
+    \item Sea $X$ un espacio topológico regular (no necesariamente $T_2$) e $Y \subset X$ un subespacio compacto. Demostrar que para todo abierto $U \subset X$ con $Y \subset U$, existe un abierto $V \subset X$ tal que $Y \subset V \subset \overline{V} \subset U$.
+    \hfill \textbf{(2 puntos)}
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+% 19 DE NOVIEMBRE DE 2025
+% ==============================================================================
+\section{19 de noviembre de 2025}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Enunciar con detalle y precisión todos los axiomas de separación.
+        \hfill \textbf{(2 puntos)}
+        \item Dar y demostrar un enunciado equivalente no trivial para cada axioma.
+        \hfill \textbf{(3 puntos)}
+    \end{enumerate}
+
+    \item Sea $(X, d)$ un espacio seudométrico y $\mathcal{T}_d$ la topología inducida por la seudométrica.
+    \begin{enumerate}
+        \item Demostrar que la aplicación distancia $d : (X, \mathcal{T}_d) \times (X, \mathcal{T}_d) \to \mathbb{R}$ es continua.
+        \hfill \textbf{(1 punto)}
+        \item Demostrar que la topología $\mathcal{T}_d$ coincide con la topología inicial de las aplicaciones $\{d_x : X \to \mathbb{R}\}_{x \in X}$ definidas por $d_x(x') := d(x, x')$ para todo $x' \in X$.
+        \hfill \textbf{(2 puntos)}
+        \item Sea $\mathcal{T}$ otra topología en $X$. Demostrar que la topología $\mathcal{T}_d$ es menos fina que la topología $\mathcal{T}$ si y solo si la aplicación distancia $d : (X, \mathcal{T}) \times (X, \mathcal{T}) \to \mathbb{R}$ es continua.
+        \hfill \textbf{(2 puntos)}
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+% 16 DE ENERO DE 2025
+% ==============================================================================
+\section{16 de enero de 2025}
+
+\subsection{Teoría}
+
+\begin{enumerate}
+    \item Define con precisión espacio topológico compacto, espacio topológico compacto por límite y espacio topológico compacto por sucesiones. Demuestra que:
+    \hfill \textbf{(2.5 puntos)}
+    \begin{enumerate}
+        \item Todo espacio compacto es compacto por límite.
+        \item Todo espacio metrizable compacto por límite es compacto por sucesiones.
+    \end{enumerate}
+
+    \item Define con precisión espacio topológico conexo, espacio topológico arcoconexo, espacio topológico localmente conexo y espacio topológico localmente arcoconexo. Demuestra que:
+    \hfill \textbf{(2.5 puntos)}
+    \begin{enumerate}
+        \item Las componentes conexas de un espacio localmente conexo son abiertas y cerradas.
+        \item Las componentes arcoconexas de un espacio localmente arcoconexo son abiertas y cerradas.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Problemas}
+
+\begin{enumerate}
+    \item Sea $X$ un espacio topológico y $D \subset X$ un subespacio denso. Demostrar que:
+    \begin{enumerate}
+        \item Para todo abierto $U \subset X$ se verifica que $\overline{U} = \overline{U \cap D}$.
+        \hfill \textbf{(0.75 puntos)}
+        \item Si $V \subset D$ es un abierto de $D$, existe un abierto $U$ de $X$ tal que el cierre de $V$ en $X$ y el cierre de $U$ coinciden.
+        \hfill \textbf{(0.25 puntos)}
+        \item Deducir que si $X$ es separado y $D$ es localmente compacto, entonces $D$ es abierto en $X$.
+        \hfill \textbf{(0.75 puntos)}
+    \end{enumerate}
+
+    \item Estudiar si son conexos los siguientes subconjuntos de $\mathbb{R}^2$ con la topología usual:
+    \[
+        \mathbb{Z} \times \mathbb{Z} \quad \text{y} \quad (\mathbb{Z} \times \mathbb{R}) \cup (\mathbb{R} \times \mathbb{Z})
+    \]
+    En caso negativo, calcular sus componentes conexas.
+    \hfill \textbf{(1.5 puntos)}
+
+    \item Sea $(X, d)$ un espacio métrico. Demostrar:
+    \begin{enumerate}
+        \item Para todo subconjunto $A \subset X$, $x \in \overline{A}$ si y solo si $d(x, A) = 0$.
+        \hfill \textbf{(0.5 puntos)}
+        \item El espacio métrico $X$ es completamente normal, es decir, para cualesquiera subconjuntos $A, B \subset X$ tales que $\overline{A} \cap B = A \cap \overline{B} = \emptyset$ existen abiertos $U, V \subset X$ tales que $A \subset U$, $B \subset V$ y $U \cap V = \emptyset$.
+        \hfill \textbf{(1.25 puntos)}
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+% 6 DE NOVIEMBRE DE 2024
+% ==============================================================================
+\section{6 de noviembre de 2024}
+
+\begin{enumerate}
+    \item Sea $X$ un conjunto y $\mathcal{B} \subset \mathcal{P}(X)$ una familia de subconjuntos. Enunciar y demostrar las propiedades necesarias y suficientes que ha de verificar $\mathcal{B}$ para que sea la base de una topología por cerrados en $X$.
+    \hfill \textbf{(3.5 puntos)}
+
+    \item Sea $X$ un espacio topológico y $A \subset X$ un subconjunto. Demostrar que si $A$ es abierto o cerrado entonces el interior de la frontera de $A$ es el vacío. ¿Es cierto el recíproco?
+    \hfill \textbf{(2.5 puntos)}
+
+    \item Sea $X$ un espacio topológico y $A \subset X$ un subconjunto. Demostrar que $A$ es abierto si y solo si verifica que para todo subconjunto $B \subset X$ tal que $A \cap B = \emptyset$ entonces $A \cap \overline{B} = \emptyset$.
+    \hfill \textbf{(2 puntos)}
+
+    \item Sean $f : X \to Y$ y $g : Y \to Z$ aplicaciones entre espacios topológicos. Teniendo en cuenta que una aplicación abierta o cerrada no es necesariamente continua, demostrar:
+    \begin{enumerate}
+        \item Si $g \circ f$ es abierta y $f$ es continua y epiyectiva, entonces $g$ es abierta.
+        \hfill \textbf{(1 punto)}
+        \item Si $g \circ f$ es cerrada y $g$ es continua e inyectiva, entonces $f$ es cerrada.
+        \hfill \textbf{(1 punto)}
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+% 30 DE ENERO DE 2024
+% ==============================================================================
+\section{30 de enero de 2024}
+
+\subsection{Teoría}
+
+\begin{enumerate}
+    \item Sea $(X, d)$ un espacio métrico.
+    \begin{enumerate}
+        \item Sea $A \subset X$ un subconjunto. Demostrar que el cierre de $A$ es $\overline{A} = \{x \in X : d(x, A) = 0\}$.
+        \hfill \textbf{(1 punto)}
+        \item Si $Y$ es un espacio topológico metrizable, demostrar que una aplicación $f : X \to Y$ es continua si y solo si para toda sucesión $\{x_n\} \subset X$ que converja a un punto $x \in X$ se verifica que la sucesión $\{f(x_n)\} \subset Y$ converge al punto $f(x) \in Y$. ¿Es necesaria la hipótesis de que $Y$ sea metrizable? Razónese la respuesta.
+        \hfill \textbf{(1 punto)}
+    \end{enumerate}
+
+    \item Sea $X$ un espacio localmente compacto y separado. Construir como espacio topológico su compactificación de Alexandroff y enunciar y demostrar sus propiedades.
+    \hfill \textbf{(3 puntos)}
+\end{enumerate}
+
+\subsection{Problemas}
+
+\begin{enumerate}
+    \item Sea $X$ un espacio topológico separado y $U \subset X$ un abierto no vacío.
+    \begin{enumerate}
+        \item Demostrar que para todo punto $x \notin U$, existe un abierto $V \subset X$ tal que $V \subset U$ y $x \notin \overline{V}$.
+        \hfill \textbf{(1 punto)}
+        \item Si $x \in U$, ¿es cierta la afirmación del apartado anterior? En caso afirmativo, demuéstrese, y en caso negativo, dar un contraejemplo y dar una condición topológica sobre el espacio $X$ o sobre el punto $x$ considerado para que sea cierta la afirmación cuando $x \in U$, y en este caso, demuéstrese.
+        \hfill \textbf{(1 punto)}
+    \end{enumerate}
+
+    \item Sea $\{X_i\}_{i \in I}$ una familia arbitraria de espacios topológicos. Demostrar que si cada espacio $X_i$ es $T_1$ para todo $i \in I$, entonces el producto directo $\prod_{i \in I} X_i$ es un espacio topológico $T_1$.
+    \hfill \textbf{(1.5 puntos)}
+
+    \item Sean $X$ un espacio topológico y $\{Y_i\}_{i \in I}$ una familia de subespacios conexos de $X$. Probar que si existe un $k \in I$ tal que $\overline{Y_k} \cap Y_i \neq \emptyset$ para todo $i \in I$, entonces $\bigcup_{i \in I} Y_i$ es conexo.
+    \hfill \textbf{(1.5 puntos)}
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+% 11 DE ENERO DE 2024
+% ==============================================================================
+\section{11 de enero de 2024}
+
+\subsection{Teoría}
+
+\begin{enumerate}
+    \item Sea $(X, \mathcal{T})$ un espacio topológico siendo $\mathcal{T}$ su topología por abiertos. Definir los entornos de un punto de $X$. Enunciar y demostrar las condiciones necesarias y suficientes para que unas familias de subconjuntos $\{\mathcal{E}'(x) \subset \mathcal{P}(X)\}_{x \in X}$ sean las familias de entornos de una topología en $X$. Demostrar que esta topología es única.
+    \hfill \textbf{(2 puntos)}
+
+    \item Dar con precisión las definiciones de espacio topológico compacto, localmente compacto, compacto por límites y compacto por sucesiones. Enunciar con claridad las relaciones que existen entre ellos.
+    \hfill \textbf{(2 puntos)}
+
+    \item Sea $(X, d)$ un espacio métrico completo. Demostrar que un subconjunto $Y \subset X$ es completo si y sólo si $Y$ es cerrado por la topología inducida por $d$.
+    \hfill \textbf{(1 punto)}
+\end{enumerate}
+
+\subsection{Problemas}
+
+\begin{enumerate}
+    \item Sea $X$ un espacio topológico y $R$ la relación de equivalencia definida por
+    \[
+        x Ry \quad \text{si} \quad \overline{\{x\}} = \overline{\{y\}} \quad \text{con } x, y \in X.
+    \]
+    Sea $\pi : X \to X/R$ la aplicación de paso al cociente y $X/R$ espacio topológico con la topología cociente. Demostrar que:
+    \begin{enumerate}
+        \item Todo cerrado de $X$ es saturado para la relación $R$.
+        \hfill \textbf{(0.75 puntos)}
+        \item Todo abierto de $X$ es saturado para la relación $R$.
+        \hfill \textbf{(0.75 puntos)}
+        \item La aplicación $\pi$ es abierta y cerrada. ¿Es homeomorfismo? Razónese la respuesta.
+        \hfill \textbf{(0.5 puntos)}
+    \end{enumerate}
+
+    \item Sea $X$ un espacio topológico compacto y $A \subseteq X$ un subconjunto infinito. Entonces el subconjunto $A'$ de los puntos de acumulación de $A$ es no vacío.
+    \hfill \textbf{(1.5 puntos)}
+
+    \item Sea $X$ un espacio métrico en el que toda bola cerrada es compacta. Demostrar que $X$ es completo. Deducir que $\mathbb{R}^n$ es completo con la métrica usual.
+    \hfill \textbf{(1.5 puntos)}
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+% 15 DE NOVIEMBRE DE 2023
+% ==============================================================================
+\section{15 de noviembre de 2023}
+
+\begin{enumerate}
+    \item Demostrar que $\mathbb{R}^n$ con la topología producto directo es metrizable.
+    \hfill \textbf{(3.5 puntos)}
+
+    \item ¿Es cierto que si $f : X \to Y$ es una aplicación entre espacios topológicos y $X$ tiene la topología inicial de $f$, entonces $f$ es una aplicación continua abierta? En caso afirmativo, probarlo, y en caso negativo, dar un contraejemplo y dar una condición sobre la aplicación o sobre los espacios topológicos para que sea cierta la afirmación anterior.
+    \hfill \textbf{(2.5 puntos)}
+
+    \item Sea $X$ el intervalo abierto $(0, 1) \subset \mathbb{R}$ y
+    \[
+        \mathcal{T} = \left\{ U_n = \left(0, 1 - \frac{1}{n}\right) \right\}_{n=2, 3, \dots} \cup \{\emptyset, X\}.
+    \]
+    Consideramos los subconjuntos $Y_1 = \left(\frac{2}{3}, \frac{5}{6}\right]$ y $Y_2 = \left(0, \frac{5}{7}\right)$ de $X$.
+    \begin{enumerate}
+        \item Probar que $\mathcal{T}$ es una topología por abiertos en $X$.
+        \item Calcular los cierres, interiores y fronteras de los subespacios $Y_1, Y_2$.
+        \item Calcular el exterior de $Y_1$ y el borde de $Y_2$.
+        \item Calcular los subespacios conexos de $X$ y sus componentes conexas.
+        \item Estudiar los axiomas de separación en $(X, \mathcal{T})$, es decir, si es $T_0, T_1, T_2, T_3, T_4$. ¿El subespacio $\{\frac{1}{4}\}$ es $T_0$? ¿Y el subespacio $\{\frac{1}{4}, \frac{2}{3}\}$ es $T_0$?
+        \item Comparar la topología $\mathcal{T}_d$ métrica usual de $X$ y la topología $\mathcal{T}$ dada en $X$.
+        \item Probar que la aplicación $f : ((1, 2), \mathcal{T}_d) \to (X, \mathcal{T})$ dada por $f(x) = x - 1$ es continua.
+    \end{enumerate}
+    \hfill \textbf{(4 puntos)}
+\end{enumerate}

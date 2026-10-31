@@ -1,0 +1,255 @@
+
+\ProvidesPackage{preamble} %creamos un paquete "preambulo"
+
+
+% IDIOMA -------------------------------------------------------------
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+
+
+
+% FUENTE -------------------------------------------------------------
+\usepackage[utf8]{inputenc} %glyph input/recognition
+\usepackage[T1]{fontenc} %glyph output
+\usepackage[]{textgreek} %greek alph. without \mathmode | OPTIONAL: artemisia
+\usepackage{bold-extra} %scshape y bfseries juntos
+\usepackage{lmodern} %mejora de typesetting
+%\DeclareMathAlphabet{\mathbbm}{U}{bbm}{m}{n} %\mathbb minuscula y números
+
+
+% \renewcommand{\familydefault}{\sfdefault} %para poner letra sans serif
+
+
+
+% FORMATO ------------------------------------------------------------
+% Pagina
+\usepackage[paper=a4paper,
+            margin=2.5 cm,
+            top=2.5 cm,
+            bottom=1.8cm
+            ]{geometry} %OPTIONAL:a4paper, top, left, right, marginparwidth, includefoot, inner, outer
+%\renewcommand{\baselinestretch}{1.5}
+\usepackage[nodisplayskipstretch]{setspace} %el parámetro quita espacio encima y debajo de las ecuaciones
+    \linespread{1.5}
+    %\singlespacing
+    % \onehalfspacing
+    %\doublespacing
+\usepackage{microtype} %ajustes de justificación, espacios, lineas huérfanas y viudas
+\usepackage[normalem]{ulem} %for underlining text
+\usepackage[document]{ragged2e} %texto no justificado
+\setlength{\parindent}{1.5em}
+
+
+
+% Formato Cabecera/Pie de pagina
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % borra cabecera y pie actuales
+\fancyhead[LE,RO]{\bfseries \thepage} %numero de pagina
+
+% Formato capítulos
+\usepackage{titlesec}
+\newcommand*{\fancychapterstyle}{%
+%---------------------------------------------------------------------
+% \titleformat{\chapter}[hang]
+%     {\bfseries\Huge}
+%     {{\fontsize{40}{120}\selectfont\thechapter}\hspace{10pt} \textcolor{gray}{{\fontsize{40}{120}\selectfont |}}\hspace{20pt}}
+%     {0pt}
+%     {\huge\bfseries}
+%---------------------------------------------------------------------
+% \titleformat{\chapter}[hang]{\Huge\bfseries}{ \Huge{\thechapter}\hspace{20pt}\textcolor{gray}{\Huge{|}}\hspace{20pt}}{0pt}{\LARGE\bfseries}
+%---------------------------------------------------------------------
+\titleformat{\chapter}[display]
+  {\bfseries\Large}
+  {\vspace{-30mm}\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+  {1ex}
+  {\titlerule\vspace{1ex}\filleft}
+  [\vspace{1ex}\titlerule]
+% %---------------------------------------------------------------------
+% \titleformat{\chapter}[display]
+%     {\Large}
+%     {\filleft
+%     \Large\MakeUppercase{\chaptertitlename}
+%     \bfseries
+%     % \tikz{%
+%     %     \node[draw,inner sep=10pt,minimum size=2cm, anchor=base] {\fontsize{40}{120}\selectfont\thechapter};
+%     % }
+%     {\fontsize{40}{120}\selectfont\thechapter}
+%     }
+%     {0ex}
+%     {\hspace{2ex}\filleft\bfseries\LARGE}
+%     [\vspace{2ex}\titlerule]
+%---------------------------------------------------------------------
+% \titleformat{\chapter}[hang]
+%     {\normalfont\huge\bfseries}
+%     {\vspace{20pt}
+%     \tikz[baseline]{%
+%         \node[draw,inner sep=10pt,minimum size=2cm] {\fontsize{30}{120}\selectfont\thechapter};
+%     }}
+%     {20pt}
+%     {\Huge\bfseries}
+% \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+%---------------------------------------------------------------------
+}
+\newcommand*{\standardchapterstyle}{%
+  \titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+  \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+}
+
+\usepackage{syntonly} %check the syntax without pdf output
+% \syntaxonly %uncomment to do syntax check only
+
+% Indices (contenido, figuras, tablas, etc.)
+\usepackage{makeidx}
+\makeindex
+
+\usepackage{cite}
+\usepackage{wrapfig}
+\usepackage{caption} %font = small
+\usepackage{subcaption} %font = small
+\usepackage{float} %posicion forzada
+
+%\usepackage{biblatex}
+
+%\usepackage{todonotes} %notas en margen de pagina
+
+% Dummy text
+% \usepackage{lipsum}
+% \usepackage[math]{blindtext}
+\usepackage{kantlipsum}
+
+
+% FORMATO TEXTO ------------------------------------------------------
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{xcolor} %dvipsnames,usenames,svgnames,table
+\usepackage[most]{tcolorbox}
+
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem} %shortlabel: A, a, I, i, 1 stand for \Alph*, \alph*, \Roman*, \roman*, \arabic*.
+\renewcommand{\labelitemii}{$\circ$}
+
+\usepackage{relsize} %relative size font with \relsize{+-n}, existe opcion \mathsmaller/\mathlarger
+
+
+
+% TABLAS -------------------------------------------------------------
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{diagbox}
+\usepackage{booktabs} % líneas horizontales en tablas
+
+
+
+% FORMULAS -----------------------------------------------------------
+%\everymath{\displaystyle}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+%\usepackage{mathabx,epsfig}
+\def\acts{\mathrel{\reflectbox{$\righttoleftarrow$}}}
+\usepackage{array}
+    %\renewcommand{\arraystretch}{1.2}
+\usepackage{mathtools} %Paquete simbolo := de definicion
+\usepackage{nccmath}
+\usepackage{mathdots}
+\usepackage{esint}
+\usepackage{cancel} %para tachar formulas y decir que son nulas
+\usepackage{xfrac} %tipos de fracciones
+\usepackage{units} %nicefrac, incompatible con siunitx
+\usepackage{polynom, polynomial}
+\usepackage{dashbox}
+\usepackage{bm} %bold math with  $\bm$, \boldsymbol$_$ or $\pbm$
+%\usepackage{siunitx} %escribir unidades de medición, usar \SI[]{}{}
+    %\decimalpoint %uncomment to: 1,23 -> 1.23
+    
+\usepackage{physics} %usar val. absoluto y normas adaptivas
+\usepackage{mathrsfs} %fuentes alternativas de escritura 
+\usepackage{stmaryrd} %simbolos adicionales, como \longmapsfrom
+\usepackage[old]{old-arrows} %flechas, opciones [old][new]
+
+\numberwithin{equation}{section}
+
+
+
+% COMANDOS y OPERADORES ----------------------------------------------
+\usepackage{command-oper}
+
+
+% TEOREMAS -----------------------------------------------------------
+\usepackage{customthm}
+\usepackage{thmtools}
+
+
+
+% GRÁFICAS -----------------------------------------------------------
+\usepackage{graphicx}
+    % \setlength\intextsep{20pt} %espaciado antes y despues de un elemento float
+\usepackage{tikz}
+    \usetikzlibrary{%
+        babel,          %solucionar problemas con el idioma
+        fit,
+        positioning,
+        automata,
+        patterns,
+        arrows,         %dibujar flechas
+        arrows.meta,    %dibujar flechas
+        backgrounds,
+        scopes,
+        math,
+        calc,           %cálculos sobre coordenadas
+        intersections,
+        angles,         %para dibujar ángulos
+        quotes,         %para dibujar ángulos
+        decorations.pathreplacing,
+        decorations.pathmorphing,
+        decorations.markings,
+        plotmarks,
+        calligraphy,
+        trees           %para hacer árboles (grafos)
+        }
+\usepackage{tikz-cd}
+    \usetikzlibrary{cd} %conmutative diagrams
+        %\tikzcdset{row sep/normal=2cm}
+\usepackage{tikz-3dplot}
+\usepackage{pgf}
+\usepackage{pgfplots}
+    \pgfplotsset{compat=1.15}
+    %\pgfplotsset{compat=newest}
+    \usepgfplotslibrary{fillbetween}
+    \usepackage{pdflscape}
+\usetikzlibrary {3d}
+    %\pgfplotsset{every axis/.append style={
+        %axis x line=middle,    % put the x axis in the middle
+        %axis y line=middle,    % put the y axis in the middle
+        %axis line style={->},  % arrows on the axis
+        %xlabel={$x$},          % default put x on x-axis
+        %ylabel={$y$},          % default put y on y-axis
+        %ticks=none
+    %}}
+
+\usepackage{tkz-fct}
+\usepackage{xlop}
+%\usepackage[all,cmtip]{xy} %cmptip, to get standard computer modern arrow tips
+\usepackage[outline]{contour}
+    \contourlength{2pt}
+\usepackage{forest} %diagrams de arbol
+% Chemistry
+\usepackage{chemfig}
+
+
+
+% OTROS --------------------------------------------------------------
+% Referencias cruzadas
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{cleveref} % referencias cruzadas inteligentes (con teorema, figura sección,... incluidos
+
+
+\usepackage{spverbatim} %entorno verbatim con line break
+
+
+% TÍTULO -------------------------------------------------------------
+\usepackage{titling}
+\title{Apuntes te\'oricos y problemas}
+\author{Sara S.G.}
+\date{2026/2027}
